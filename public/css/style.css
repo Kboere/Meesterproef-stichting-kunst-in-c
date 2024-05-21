@@ -4,12 +4,80 @@
 }
 
 :root {
+    --font-family: "Open Sans", sans-serif;
+    --black-font-color: #000000;
+    --white-font-color: #ffffff;
+    --standard-font-size: 16px;
+
     --max-width: 1200px;
+}
+
+html:has([value="darkmode"]:checked) {
+    --darkmode: true;
+  }
+
+  /* ----------------------------------------------------------
+---- UTILLITY CLASSES
+-----------------------------------------------------------*/
+
+section.fixed-width {
+    max-width: var(--max-width);
+    width: 100%;
+    margin: auto;
 }
 
 /* ----------------------------------------------------------
 ---- GENERAL STYLING 
 -----------------------------------------------------------*/
+
+body{
+    font-family: var(--font-family);
+    transition: .5s;
+}
+
+h1{
+    font-size: 3.5em;
+    font-weight: 700;
+}
+h2{
+    font-size: 2.5em;
+}
+h3{
+    font-size: 2em;
+}
+h4{
+    font-size: 1.5em;
+}
+h5{
+    font-size: 1.2em;
+}
+h6{
+    font-size: 1em;
+}
+
+blockquote{
+    font-style: italic;
+    font-size: 1.5em;
+    padding: 20px;
+    border-left: 5px solid #000;
+    margin: 20px 0;
+}
+
+p{
+    font-size: var(--standard-font-size);
+    line-height: 1.5;
+}
+
+a{
+    text-decoration: none;
+    color: red;
+    font-size: var(--standard-font-size);
+    text-decoration: underline;
+
+    &:hover, &:focus, &:focus-visible{
+        color: blue;
+    }
+}
 
 header {
     position: relative;
@@ -17,6 +85,7 @@ header {
     max-width: var(--max-width);
     width: 100%;
     margin: auto;
+    height: 110px;
 
     & nav {
         position: fixed;
@@ -26,9 +95,16 @@ header {
         gap: 0px 20px;
         grid-template-areas: ". . .";
         justify-content: space-between;
+        align-items: center;
         max-width: var(--max-width);
         width: 100%;
         padding-top: 20px;
+
+        & .logo{
+            & svg{
+                height: 90px;
+            }
+        }
 
         & ul{
             display: flex;
@@ -37,18 +113,22 @@ header {
             list-style: none;
             padding: 0;
             margin: 0;
-            padding: 1em 2em;
+            padding: 1.5em 2em;
             box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
             border-radius: 50px;
+            height: fit-content;
+            margin-right: 50px;
+            margin-top: -10px;
 
             & li {
-                margin: 0 10px;
+                margin: 0 20px;
             }
 
             & a {
                 text-decoration: none;
                 color: #000;
-                font-weight: 600;
+                font-weight: 400;
+                text-decoration: none;
             }
         }
 
@@ -56,6 +136,23 @@ header {
             position: absolute;
             right: 0;
             top: 0;
+
+           & input{
+                    appearance: none;
+                }
         }
     }
+}
+
+main{
+    position: relative;
+    margin-top: 50px;
+    width: 100%;
+}
+
+@container style(--darkmode: true) {
+body {
+background-color: red;
+}
+
 }
