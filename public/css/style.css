@@ -98,6 +98,156 @@ circle#Ellipse_3 {
   fill: gainsboro;
 }
 
+/* ----------------------------------------------------------
+---- LOGO ANIMATION
+-----------------------------------------------------------*/
+
+.logo #Group_29 path {
+  transition: transform .5s; 
+}
+
+.logo svg:hover {
+
+& #Group_29 #Path_27 {
+  transform: translateY(20px);
+}
+
+& #Group_29 #Path_28 {
+  transform: translateY(26px) translateX(-67px);
+}
+
+& #Group_29 #Path_29 {
+  transform: translateY(40px) translateX(-110px);
+}
+
+& #Group_29 #Path_30 {
+  transform: translateY(6px) translateX(-80px);
+}
+
+& #Group_29 #Path_31 {
+  transform: translateY(-16.5px) translateX(-105px);
+}
+
+& #Group_29 #Path_32 {
+  transform: translateY(-46px) translateX(22px);
+}
+
+& #Group_29 #Rectangle_38 {
+  transform: translateY(41px) translateX(105px);
+}
+
+& #Group_29 #Path_33 {
+  transform: translateY(-32px) translateX(140px);
+}
+
+& #Path_49,
+& #Path_47,
+& #Path_45,
+& #Path_43,
+& #Path_41,
+& #Path_39,
+& #Path_37,
+& #Path_35,
+& #Path_34 {
+  opacity: 0;
+  transition: .5s;
+}
+
+& #Path_34,
+& #Group_22,
+& #Group_23,
+& #Group_24,
+& #Group_25,
+& #Group_26,
+& #Group_27,
+& #Group_28 {
+  opacity: 0;
+  transition: .5s;
+}
+
+}
+
+/* .logo  svg:hover #Group_29 #Path_28 {
+  transform: translateY(26px) translateX(-67px);
+}
+
+.logo  svg:hover #Group_29 #Path_29 {
+  transform: translateY(40px) translateX(-110px);
+}
+
+.logo  svg:hover #Group_29 #Path_30 {
+  transform: translateY(6px) translateX(-80px);
+}
+
+svg:hover #Group_29 #Path_31 {
+  transform: translateY(-16.5px) translateX(-105px);
+} */
+
+/* svg:hover #Group_29 #Path_32 {
+  transform: translateY(-46px) translateX(22px);
+}
+
+svg:hover #Group_29 #Rectangle_38 {
+  transform: translateY(41px) translateX(105px);
+}
+
+svg:hover #Group_29 #Path_33 {
+  transform: translateY(-32px) translateX(140px);
+} */
+
+/* svg:hover #Path_49,
+svg:hover #Path_47,
+svg:hover #Path_45,
+svg:hover #Path_43,
+svg:hover #Path_41,
+svg:hover #Path_39,
+svg:hover #Path_37,
+svg:hover #Path_35,
+svg:hover #Path_34 {
+  opacity: 0;
+  transition: .5s;
+} */
+
+
+
+
+/* svg:hover #Path_34,
+svg:hover #Group_22,
+svg:hover #Group_23,
+svg:hover #Group_24,
+svg:hover #Group_25,
+svg:hover #Group_26,
+svg:hover #Group_27,
+svg:hover #Group_28 {
+  opacity: 0;
+  transition: .5s;
+} */
+
+ #Group_22,
+ #Group_23,
+ #Group_24,
+ #Group_25,
+ #Group_26,
+ #Group_27,
+ #Group_28,
+ #Path_34 {
+  opacity: 1;
+  transition: .5s; 
+}
+
+#Path_49,
+#Path_47,
+#Path_45,
+#Path_43,
+#Path_41,
+#Path_39,
+#Path_37,
+#Path_35,
+#Path_34 {
+  opacity: 1;
+  transition: .5s;
+}
+
 header {
     position: relative;
     justify-content: space-between;
@@ -123,7 +273,7 @@ header {
         & .logo {
             z-index: 9999;
             & svg {
-                height: 90px;
+                height: 75px;
             }
         }
 

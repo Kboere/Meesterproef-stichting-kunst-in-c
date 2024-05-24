@@ -3,4 +3,7 @@ function toggleMenu() {
     const hamburger = document.querySelector('.hamburger');
     menu.classList.toggle('show');
     hamburger.classList.toggle('active');
+
+    
+
   }
