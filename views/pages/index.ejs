@@ -1,29 +1,21 @@
-<!DOCTYPE html>
-<html lang="nl">
-  <head>
-    <%- include('../partials/head'); %>
-  </head>
-  <body>
-    <header>
-        <%- include('../partials/header'); %>
-    </header>
+<!-- Start of html + head + body tag -->
+<%- include('../components/head'); %>
+<!-- end of head & body tag -->
 
-    <main>
-      <section class="page-header fixed-width">
-        <h1>Kunst in C</h1>
-      </section>
+<%- include('../components/header'); %>
 
-      <section>
-        <section class="fixed-width">
-          
-          <h1>uhfsdu</h1>
-          <p>lnbkdfjnl</p>test</section>
-      </section>
-       <%- include('../partials/agenda.ejs') %>
-    </main>
-    
+<main>
+  <section class="page-header fixed-width">
+    <h1>Kunst in C</h1>
+  </section>
 
-  <%- include('../partials/footer.ejs'); %>
-    <script src="/js/index.js"></script>
-  </body>
-</html>
+  <section>
+    <section class="fixed-width">
+    </section>
+  </section>
+  <%- include('../components/agenda.ejs') %>
+</main>
+
+<!-- Start of footer -->
+<%- include('../components/footer.ejs'); %>
+<!-- end of footer & html tag -->

@@ -277,7 +277,7 @@ main {
 
 @container style(--darkmode: true) {
     body {
-        background-color: red;
+        background-color: rgb(21, 21, 21);
     }
 }
 
@@ -572,8 +572,9 @@ main {
   & .arrow-link:hover,
   & .arrow-link:focus {
     background-color: var(--kunst-in-c-rood);
+    /* color: white; */
 
-    * i {
+    & i {
       transform: rotate(-30deg);
 
       color: white;
