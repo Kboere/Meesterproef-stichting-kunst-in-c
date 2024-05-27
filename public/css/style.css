@@ -98,7 +98,7 @@ html:has([value="darkmode"]:checked) {
 ---- UTILLITY CLASSES
 -----------------------------------------------------------*/
 
-section.fixed-width {
+.fixed-width {
     max-width: var(--max-width);
     width: 100%;
     margin: auto;
