@@ -31,7 +31,7 @@ html:has([value="darkmode"]:checked) {
         & ul {
           box-shadow: rgba(31, 31, 31, 0.2) 0px 2px 8px 0px;
           background-color: rgb(16, 16, 16);
-          border:  solid var(--kunst-in-c-wit) .3px;
+          border:  solid var(--kunst-in-c-wit) 1px;
           & li {
             & a {
               color: white;
@@ -333,6 +333,8 @@ header {
             margin-right: 50px;
             margin-top: -10px;
             transition: .5s;
+            border:  solid transparent 1px;
+
 
 
             & li {
@@ -771,7 +773,7 @@ main {
       color: white;
       transition:
         color .5s,
-        transform .5s .5s;
+        transform .2s .2s;
     }
 
   }
