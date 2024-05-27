@@ -237,6 +237,7 @@ header {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+    transition: height 0.3s;
     /* background-color: transparent; */
     /* transition: .3s; */
 
@@ -249,9 +250,11 @@ header {
         margin-top: 0px;
         animation: colorChange .3s both;
         height: 70px;
+        transition: height 0.3s;
 
         & nav{
             padding: 2px;
+            transition: padding 0.3s;
 
             & .logo{
                 height: 70px;
