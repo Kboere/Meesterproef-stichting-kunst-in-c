@@ -682,7 +682,6 @@ main {
 
 /*  Agenda Styling start */
 .event_container {
-  margin: 3rem 2rem;
 
   & .agenda-container {
     max-width: 800px;
