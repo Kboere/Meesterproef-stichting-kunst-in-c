@@ -32,6 +32,56 @@ html:has([value="darkmode"]:checked) {
         border-radius: 50px;
       
       }
+
+        & #lamp {
+          width: 60px;
+        }
+      
+        div {
+          & circle#Ellipse_3 {
+            fill: rgb(255, 255, 181);
+          }
+      
+          .brightness {
+            position: absolute;
+            filter: blur(30px);
+            top: 143px;
+            right: -24px;
+            z-index: -1;
+            fill: yellow;
+            opacity: 1;
+          }
+        }
+
+        h1, h2, h3, h4, h5, h6, p {
+          color: white;
+        }
+      
+        #Group_29 #Path_27,
+        #Group_29 #Path_28,
+        #Group_29 #Path_29,
+        #Group_29 #Path_30,
+        #Group_29 #Path_31,
+        #Group_29 #Path_32,
+        #Group_29 #Rectangle_38 {
+          fill: white;
+        }
+      
+        #Path_34,
+        #Path_36,
+        #Path_42,
+        #Path_38,
+        #Path_40,
+        #Path_44, 
+        #Path_46, 
+        #Path_48, 
+        #Path_50, 
+        #Path_52{
+          stroke-width: 1px;
+          transition: stroke-width .5s;
+        }      
+      
+
 }
 
 /* ----------------------------------------------------------
