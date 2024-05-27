@@ -22,7 +22,6 @@
     --kunstwerk-titel: 'New York Extra Large', sans-serif;
   
 }
-
 html:has([value="darkmode"]:checked) {
     --darkmode: true;
 
@@ -479,6 +478,204 @@ main {
 ---- FOOTER 
 -----------------------------------------------------------*/
 
+footer {
+  .parent {
+    position: relative;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 0px;
+    margin: 0 1rem;
+
+    .imgFooter {
+      grid-area: auto;
+      background-image: url('/images/kunst.png');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .colofonFooter {
+      position: relative;
+      grid-area: auto;
+      background-color: var(--kunst-in-c-rood);
+      padding: 2rem;
+      color: var(--kunst-in-c-wit);
+      height: fit-content;
+
+      & .colofon-contact {
+        width: 100%;
+        flex-wrap: wrap;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+        margin-bottom: 20px;
+
+        p {
+          transition: .5s .5s;
+        }
+
+        a {
+          width: 2.5rem;
+          height: 2.5rem;
+          border: 2px solid var(--kunst-in-c-wit);
+          border-radius: 100%;
+          justify-content: center;
+          display: flex;
+          align-items: center;
+        }
+
+        i {
+          transition: .5s;
+        }
+
+        & a:hover,
+        a:focus {
+          background-color: var(--kunst-in-c-wit);
+
+          & i {
+            color: var(--kunst-in-c-rood);
+          }
+
+          &+p {
+            text-decoration: underline;
+          }
+
+
+        }
+      }
+
+      & .colofon-social-media {
+        display: flex;
+        gap: 1rem;
+
+        & a {
+          aspect-ratio: 1/1;
+          width: 2.5rem;
+          border: 2px solid var(--kunst-in-c-wit);
+          border-radius: 50%;
+          justify-content: center;
+          display: flex;
+          align-items: center;
+        }
+
+        i {
+          transition: .5s;
+        }
+
+        & a:hover,
+        a:focus {
+          background-color: var(--kunst-in-c-wit);
+
+          i {
+            color: var(--kunst-in-c-rood);
+          }
+        }
+
+
+      }
+
+      & ul {
+        padding: 0;
+
+        & li {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 1rem;
+
+          & a {
+            color: white;
+            text-decoration: none;
+            border: solid var(--kunst-in-c-wit) 2px;
+            padding: .7rem 1rem;
+            border-radius: 10rem;
+            width: fit-content;
+            transition: .2s;
+            display: flex;
+            align-items: center;
+
+            & i {
+              margin-left: 1rem;
+              transition: .2s;
+
+            }
+
+            /* & svg {
+              fill: white;
+              margin-left: 1rem;
+            } */
+          }
+
+
+
+          & a:hover,
+          & a:focus,
+          & a:focus-visible {
+            background-color: white;
+            color: var(--kunst-in-c-rood);
+            border: solid var(--kunst-in-c-rood) 2px;
+            margin-right: 1rem;
+
+            & i {
+              margin-left: .7rem;
+            }
+          }
+        }
+      }
+
+      & .colofon-contact,
+      & .colofon-social-media {
+        & a {
+          color: var(--kunst-in-c-wit);
+          text-decoration: none;
+        }
+      }
+
+      & img {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: clamp(25%, 30%, 30%)
+      }
+    }
+  }
+
+  .sub-footer {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    color: var(--kunst-in-c-rood);
+    font-weight: 500;
+    justify-content: center;
+
+    & h6 {
+      font-size: .7rem;
+      margin: 0;
+      font-weight: 400;
+
+    }
+
+    & ul {
+      display: flex;
+      padding: 0;
+      gap: 2rem;
+
+      & li {
+        list-style-type: none;
+        margin: 0;
+
+        & a {
+          text-decoration: none;
+          font-size: .7rem;
+          color: var(--kunst-in-c-rood);
+        }
+      }
+    }
+  }
+}
+
 
 @media (min-width: 600px) {
 
@@ -680,101 +877,207 @@ main {
       }
     }
   }
-}
 
-
-/*  Agenda Styling start */
-.event_container {
-
-  & .agenda-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-
-  & .event_header {
-    display: flex;
-    align-items: center;
-    margin: 1rem 0;
-    justify-content: space-between;
-
-
-   & h1 {
-      font-size: 2em;
+  .event_container {
+    
+    & .agenda-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+  
+    & .event_header {
+      display: flex;
+      align-items: center;
+      margin: 1rem 0;
+      justify-content: space-between;
+  
+  
+     & h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        margin: 0;
+      }
+  
+      & a {
+        margin: 0;
+        color: var(--kunst-in-c-rood);
+        text-decoration: underline;
+      }
+  
+    }
+  
+    & .view-all {
+      display: block;
+      text-align: right;
+      color: red;
+      text-decoration: none;
       margin-bottom: 20px;
-      margin: 0;
     }
-
-    & a {
-      margin: 0;
+  
+    & .events {
+      border-top: 1px solid #000;
+    }
+  
+    & .event {
+      border-bottom: 1px solid #000;
+      padding: 2rem 0;
+      display: flex;
+  
+      & p {
+        margin: 0;
+        color: #666;
+      }
+  
+      & h2 {
+        font-size: 2em;
+        margin: 0;
+        width: fit-content;
+      }
+    }
+  
+    & .arrow-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1/1;
+      width: 4rem;
+      border: 2.5px solid var(--kunst-in-c-rood);
+      border-radius: 50%;
+      background-color: rgba(255, 0, 0, 0);
+      text-decoration: none;
       color: var(--kunst-in-c-rood);
-      text-decoration: underline;
+      font-size: 1.5rem;
+      margin-left: auto;
+      transition: .5s ease-in-out;
+  
+      & i {
+        transition: .5s;
+      }
     }
-
-  }
-
-  & .view-all {
-    display: block;
-    text-align: right;
-    color: red;
-    text-decoration: none;
-    margin-bottom: 20px;
-  }
-
-  & .events {
-    border-top: 1px solid #000;
-  }
-
-  & .event {
-    border-bottom: 1px solid #000;
-    padding: 2rem 0;
-    display: flex;
-
-    & p {
-      margin: 0;
-      color: #666;
-    }
-
-    & h2 {
-      font-size: 2em;
-      margin: 0;
-      width: fit-content;
-    }
-  }
-
-  & .arrow-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    aspect-ratio: 1/1;
-    width: 4rem;
-    border: 2.5px solid var(--kunst-in-c-rood);
-    border-radius: 50%;
-    background-color: rgba(255, 0, 0, 0);
-    text-decoration: none;
-    color: var(--kunst-in-c-rood);
-    font-size: 1.5rem;
-    margin-left: auto;
-    transition: .5s ease-in-out;
-
-    & i {
-      transition: .5s;
-    }
-  }
-
-  & .arrow-link:hover,
-  & .arrow-link:focus {
-    background-color: var(--kunst-in-c-rood);
-    /* color: white; */
-
-    & i {
-      transform: rotate(-30deg);
-
-      color: white;
-      transition:
-        color .5s,
-        transform .2s .2s;
-    }
+  
+    & .arrow-link:hover,
+    & .arrow-link:focus {
+      background-color: var(--kunst-in-c-rood);
+      /* color: white; */
+  
+      & i {
+        transform: rotate(-30deg);
+  
+        color: white;
+        transition:
+          color .5s,
+          transform .2s .2s;
+      }
+  
 
   }
 }
+/*  Agenda Styling start */
+}
+
+
+@media (max-width: 600px){
+
+  .event_container {
+    padding: 0 2rem;
+  
+    & .agenda-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+  
+    & .event_header {
+      display: flex;
+      align-items: center;
+      margin: 1rem 0;
+      justify-content: space-between;
+  
+  
+     & h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        margin: 0;
+      }
+  
+      & a {
+        margin: 0;
+        color: var(--kunst-in-c-rood);
+        text-decoration: underline;
+      }
+  
+    }
+  
+    & .view-all {
+      display: block;
+      text-align: right;
+      color: red;
+      text-decoration: none;
+      margin-bottom: 20px;
+    }
+  
+    & .events {
+      border-top: 1px solid #000;
+    }
+  
+    & .event {
+      border-bottom: 1px solid #000;
+      padding: 2rem 0;
+      display: flex;
+      align-items: center;
+  
+      & p {
+        margin: 0;
+        color: #666;
+      }
+  
+      & h2 {
+        font-size: 2em;
+        margin: 0;
+        width: fit-content;
+      }
+    }
+  
+    & .arrow-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1 / 1;
+      width: 4rem;
+      border: 2.5px solid var(--kunst-in-c-rood);
+      border-radius: 100%;
+      background-color: rgba(255, 0, 0, 0);
+      text-decoration: none;
+      color: var(--kunst-in-c-rood);
+      font-size: 1.5rem;
+      margin-left: auto;
+      transition: .5s ease-in-out;
+      /* height: 60px; */
+  
+      & i {
+        transition: .5s;
+      }
+    }
+  
+    & .arrow-link:hover,
+    & .arrow-link:focus {
+      background-color: var(--kunst-in-c-rood);
+      /* color: white; */
+  
+      & i {
+        transform: rotate(-30deg);
+  
+        color: white;
+        transition:
+          color .5s,
+          transform .2s .2s;
+      }
+  
+    }
+  }
+  
+  .fixed-width {
+    width: auto;
+  }
+  }
