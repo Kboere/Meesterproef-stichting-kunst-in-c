@@ -104,6 +104,10 @@ section.fixed-width {
     margin: auto;
 }
 
+.margin-top-150 {
+    margin-top: 150px;
+}
+
 /* ----------------------------------------------------------
 ---- GENERAL STYLING 
 -----------------------------------------------------------*/
@@ -282,13 +286,16 @@ circle#Ellipse_3 {
 }
 
 header {
-    position: relative;
+    position: fixed;
     justify-content: space-between;
     max-width: var(--max-width);
     width: 100%;
     margin: auto;
     height: 110px;
     z-index: 9999;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
 
     & nav {
         position: fixed;
@@ -378,7 +385,6 @@ header {
 
 main {
     position: relative;
-    margin-top: 50px;
     width: 100%;
 }
 
