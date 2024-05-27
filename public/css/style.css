@@ -32,10 +32,6 @@ html:has([value="darkmode"]:checked) {
         border-radius: 50px;
       
       }
-
-        & #lamp {
-          width: 60px;
-        }
       
         div {
           & circle#Ellipse_3 {
