@@ -229,6 +229,7 @@ header {
     animation: colorChange 0.3s both;
     height: 70px;
     transition: height 0.3s;
+    background-color: #ffffff;
 
     & nav {
       padding: 2px;
