@@ -11,6 +11,7 @@
     --kunst-in-c-rood-hover: #581324;
     --kunst-in-c-wit: white;
     --kunst-in-c-zwart: black;
+    --kunst-in-c-grijs: #E5E5E5;
     --kunstwerk-titel: 'New York Extra Large', sans-serif;
 }
 
@@ -19,20 +20,115 @@
 -----------------------------------------------------------*/
 
 .section-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
     & .title {
-        h2 {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        & h2 {
+            text-align: center;
+            font-family: var(--kunstwerk-titel);
+            color: var(--kunst-in-c-rood);
+            font-weight: 600;
+        }
+        & p {
+            max-width: 550px;
             text-align: center;
         }
     }
 
     & .cards-wrapper {
         display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
         justify-content: center;
-        gap: 60px;
 
         .card {
-            width: 100px;
-            background-color: var(--kunst-in-c-rood);
+            flex: 1 0 calc(33.33% - 40px);
+            max-width: calc(33.33% - 40px);
+            width: calc(33.33% - 40px);
+            background-color: var(--kunst-in-c-wit);
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            border-radius: 5px;
+
+            &:first-of-type {
+                & .content {
+                    & .card-footer {
+                        justify-content: flex-start;
+
+                        & .button-wrapper {
+                            padding: 1rem 0;
+                        }
+                    }
+                }
+            }
+
+            & .image-wrapper {
+                height: 200px;
+
+                & .card-image {
+                    width: 100%;
+                    height: 100%;
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                    object-fit: cover;
+                }
+            }
+
+            & .content {
+                padding: 25px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 100px;
+
+                h3 {
+                    font-family: var(--kunstwerk-titel);
+                    font-weight: 500;
+                    font-size: 25px;
+                    font-style: italic;
+                }
+            }
+
+            & .card-footer {
+                display: flex;
+                justify-content: flex-end;
+
+                & .button-wrapper {
+                    padding: .7rem 1rem;
+                    display: flex;
+                    gap: 30px;
+
+                    & .social-link {
+                        color: var(--black-font-color);
+                        font-size: 14px;
+                        text-decoration: none;
+                        position: relative;
+                    }
+                }
+
+                & .btn {
+                    background-color: var(--kunst-in-c-rood);
+                    padding: .7rem 1rem;
+                    border-radius: 2rem;
+                    border: 2px solid var(--kunst-in-c-rood);
+                    color: var(--white-font-color);
+                    font-size: 16px;
+                    transition: .2s;
+    
+                    &:hover,
+                    &:focus,
+                    &:focus-visible {
+                        cursor: pointer;
+                        background-color: var(--kunst-in-c-rood-hover);
+                        border-color: var(--kunst-in-c-rood-hover);
+                    }
+                }
+            }
         }
     }
 }
