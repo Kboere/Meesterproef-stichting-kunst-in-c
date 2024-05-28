@@ -1,0 +1,191 @@
+/* $companyColourOne:      #FEFEFE;
+$companyColourTwo:      #E8EDDF;
+$companyColourThree:    #CFDBD5;
+$companyColourFour:     #F5CB5C;
+$companyColourFive:     #4B4E4B;
+$companyColourSix:      #242423;
+$companyColourSeven:    #0A0A0A;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Manrope:wght@400;600&display=swap');
+
+$montserrat:            'Montserrat', sans-serif;
+$manrope:               'Manrope', sans-serif;
+
+// START; Lenis Scroll.
+// html {
+//   &.lenis {
+//     height: auto;
+//   }
+// }
+
+// .lenis {
+//   &.lenis-smooth {
+//     scroll-behavior: auto;
+
+//     [data-lenis-prevent] {
+//       overscroll-behavior: contain;
+//     }
+//   }
+
+//   &.lenis-scrolling {
+//     iframe {
+//       pointer-events: none;
+//     }
+//   }
+
+//   &.lenis-stopped {
+//     overflow: hidden;
+//   }
+// }
+// END; Lenis Scroll. */
+:root {
+    --font-family: "Open Sans", sans-serif;
+    --black-font-color: #000000;
+    --white-font-color: #ffffff;
+    --standard-font-size: 16px;
+
+    --max-width: 1200px;
+
+    --kunst-in-c-rood: #DC2531;
+    --kunst-in-c-wit: white;
+    --kunst-in-c-zwart: black;
+    --kunstwerk-titel: 'New York Extra Large', sans-serif;
+
+}
+
+#text-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 1em;
+}
+
+h1 {
+    font-family: var(--kunstwerk-titel);
+    font-size: var(--standard-font-size);
+    color: var(--kunst-in-c-rood);
+    line-height: 1.2em;
+    width: 50vw;
+}
+
+p {
+    color: var(--black-font-color);
+    font-size: 18px;
+
+    font-family: var(--font-family);
+    font-weight: 600;
+}
+
+button {
+    font-size: 20px;
+    color: var(--black-font-color);
+    font-weight: bold;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    gap: 1.2em;
+    cursor: pointer;
+    ;
+
+    & i {
+        transform: scalex(2) scaley(1.7);
+        transition: .3s;
+    }
+
+    &:hover i {
+        transform: translatex(1em) scalex(2) scaley(1.7);
+    }
+}
+
+#filter-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    list-style: none;
+    position: absolute;
+    top: 150px;
+    width: 100%;
+
+    & li{
+        margin-right: 30px;
+    }
+
+    & li:first-of-type{
+        min-width: 50vw;
+        padding: 0 6vw 0 6vw;
+        margin-right: 0;
+    }
+}
+
+li p {
+    color: rgb(212, 212, 212);
+}
+
+
+.section {
+    min-height: 100vh;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+
+
+
+    &.four {
+        background-color: white;
+        z-index: 4;
+
+        &.section_to-pin {
+            height: 100vh;
+            left: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            overflow: hidden;
+            padding: 0 !important;
+
+            .section_pin {
+                height: 100vh;
+                /* padding: 120px 12vw 120px 12vw; */
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                margin-top: 400px;
+
+                .content_wrapper {
+                    min-width: 300px;
+                    padding: 0vw 6vw 0vw 6vw;
+                }
+
+                .image_wrapper {
+                    min-width: 400px;
+                    position: relative;
+                    opacity: .7;
+                    transition: opacity .3s cubic-bezier(0.51, 0.18, 0, 0.88);
+
+                    .image {
+                        width: 350px;
+                        height: 65vh;
+
+                        object-fit: cover;
+                        object-position: center;
+                        border-radius: 10px;
+                    }
+
+                    &.active {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    .grid-container {
+        width: 100%;
+    }
+}

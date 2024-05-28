@@ -12,8 +12,18 @@ app.set("view engine", "ejs");
 // Define routes
 app.get("/", async function (req, res) {
   try {
-    
+
     res.render("pages/index");
+  } catch (err) {
+    console.error("Error retrieving page:", err);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+app.get("/collectie", async function (req, res) {
+  try {
+
+    res.render("pages/collection");
   } catch (err) {
     console.error("Error retrieving page:", err);
     res.status(500).send("Internal Server Error");
