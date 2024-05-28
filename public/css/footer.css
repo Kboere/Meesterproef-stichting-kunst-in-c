@@ -126,7 +126,7 @@ footer {
           & a:focus-visible {
             background-color: white;
             color: var(--kunst-in-c-rood);
-            border: solid var(--kunst-in-c-rood) 2px;
+            border: solid var(--kunst-in-c-wit) 2px;
             margin-right: 1rem;
 
             & i {
