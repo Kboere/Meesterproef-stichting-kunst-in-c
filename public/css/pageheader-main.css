@@ -1,0 +1,163 @@
+/* ----------------------------------------------------------
+---- PAGEHEADER MAIN
+-----------------------------------------------------------*/
+
+.section-pageheader {
+    height: 100dvh;
+    display: flex;
+    background-image: url('/images/pattern-bg.png');
+    background-size: cover;
+    background-position: center;
+
+    & .pageheader-gradient {
+        background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(3,68,86,0) 50%, rgba(255,255,255,1) 100%);
+        width: 100%;
+        display: flex;
+
+        & .content-wrapper {
+            display: flex;
+            justify-content: space-between;
+
+            & .col-left {
+                flex: 1 0 calc(50% - 100px);
+            }
+
+            & .col-right {
+                flex: 1 0 50%;
+                & .content {
+                    max-width: 420px;
+            
+                    & .title {
+                        margin-bottom: 5px;
+                    }
+            
+                    & .button-wrapper {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 10px;
+                        margin-top: 15px;
+            
+                        & .btn {
+                            background-color: var(--kunst-in-c-rood);
+                            padding: .7rem 1rem;
+                            border-radius: 2rem;
+                            border: 2px solid var(--kunst-in-c-rood);
+                            color: var(--white-font-color);
+                            font-size: 16px;
+                            transition: .2s;
+            
+                            &:hover,
+                            &:focus,
+                            &:focus-visible {
+                                cursor: pointer;
+                                background-color: var(--kunst-in-c-rood-hover);
+                                border-color: var(--kunst-in-c-rood-hover);
+                            }
+
+                            /* &:not(:first-of-type) {
+                                margin-left: 10px;
+                            } */
+                        }
+            
+                        & .btn-outline {
+                            background: var(--transparent-bg);
+                            border: 2px solid var(--kunst-in-c-rood);
+                            color: var(--kunst-in-c-rood);
+            
+                            &:hover {
+                                color: var(--kunst-in-c-wit);
+                                border-color: var(--kunst-in-c-rood-hover);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .col-left {
+        display: flex;
+        justify-content: center;
+
+        & .map-image {
+            width: 90%;
+        }
+    }
+
+    .col-right {
+        & .content {
+            padding: 20px;
+
+            & .title {
+                & h1 {
+                    font-size: 3em;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+
+        & .col-left {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 768px) {
+    .content-wrapper {
+        padding-top: 100px;
+
+        & .col-left {
+            & .map-image {
+                width: 70%;
+            }
+        }
+
+        & .col-right {
+            & .content {
+                padding: 20px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .content-wrapper {
+        padding-top: 100px;
+
+        & .col-left {
+            justify-content: center;
+            display: flex;
+            align-items: center;
+
+            & .map-image {
+                width: 90%;
+            }
+        }
+
+        & .col-right {
+            & .content {
+                padding: 20px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .content-wrapper {
+        gap: 100px;
+
+        & .col-left {
+            & .map-image {
+                width: 100%;
+            }
+        }
+    }
+}
