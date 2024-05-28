@@ -6,11 +6,12 @@ html:has([value="darkmode"]:checked) {
   --darkmode: true;
 
   header {
+    &.active{
+      background-color: #000;
+    }
     & nav {
       & ul {
-        box-shadow: rgba(31, 31, 31, 0.2) 0px 2px 8px 0px;
-        background-color: rgb(16, 16, 16);
-        border:  solid var(--kunst-in-c-wit) 1px;
+        background-color: #000;
         & li {
           & a {
             color: white;
