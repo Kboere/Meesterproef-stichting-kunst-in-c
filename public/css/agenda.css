@@ -1,0 +1,92 @@
+/* ----------------------------------------------------------
+---- Event Container
+-----------------------------------------------------------*/
+
+.event_container {
+    & .agenda-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+  
+    & .event_header {
+      display: flex;
+      align-items: center;
+      margin: 1rem 0;
+      justify-content: space-between;
+  
+      & h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        margin: 0;
+      }
+  
+      & a {
+        margin: 0;
+        color: var(--kunst-in-c-rood);
+        text-decoration: underline;
+      }
+    }
+  
+    & .view-all {
+      display: block;
+      text-align: right;
+      color: red;
+      text-decoration: none;
+      margin-bottom: 20px;
+    }
+  
+    & .events {
+      border-top: 1px solid #000;
+    }
+  
+    & .event {
+      border-bottom: 1px solid #000;
+      padding: 2rem 0;
+      display: flex;
+  
+      & p {
+        margin: 0;
+        color: #666;
+      }
+  
+      & h2 {
+        font-size: 2em;
+        margin: 0;
+        width: fit-content;
+      }
+    }
+  
+    & .arrow-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1/1;
+      width: 4rem;
+      border: 2.5px solid var(--kunst-in-c-rood);
+      border-radius: 50%;
+      background-color: rgba(255, 0, 0, 0);
+      text-decoration: none;
+      color: var(--kunst-in-c-rood);
+      font-size: 1.5rem;
+      margin-left: auto;
+      transition: 0.5s ease-in-out;
+  
+      & i {
+        transition: 0.5s;
+      }
+    }
+  
+    & .arrow-link:hover,
+    & .arrow-link:focus {
+      background-color: var(--kunst-in-c-rood);
+      /* color: white; */
+  
+      & i {
+        transform: rotate(-30deg);
+  
+        color: white;
+        transition: color 0.5s, transform 0.2s 0.2s;
+      }
+    }
+  }

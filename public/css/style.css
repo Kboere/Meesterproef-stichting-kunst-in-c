@@ -1,98 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-@import url('https://fonts.cdnfonts.com/css/new-york-extra-large');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.cdnfonts.com/css/new-york-extra-large");
 
+@import "navigation.css";
+@import "footer.css";
+@import "agenda.css";
 
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
-    --font-family: "Open Sans", sans-serif;
-    --black-font-color: #000000;
-    --white-font-color: #ffffff;
-    --standard-font-size: 16px;
+  --font-family: "Open Sans", sans-serif;
+  --black-font-color: #000000;
+  --white-font-color: #ffffff;
+  --standard-font-size: 16px;
 
-    --max-width: 1200px;
+  --max-width: 1200px;
 
-    --kunst-in-c-rood: #DC2531;
-    --kunst-in-c-wit: white;
-    --kunst-in-c-zwart: black;
-    --kunstwerk-titel: 'New York Extra Large', sans-serif;
-  
-}
-
-html:has([value="darkmode"]:checked) {
-    --darkmode: true;
-
-    header {
-      & nav {
-        & ul {
-          box-shadow: rgba(31, 31, 31, 0.2) 0px 2px 8px 0px;
-          background-color: rgb(16, 16, 16);
-          border:  solid var(--kunst-in-c-wit) 1px;
-          & li {
-            & a {
-              color: white;
-            }
-          }
-        }
-      }
-    }
-
-    & circle#Ellipse_3 {
-        fill: rgb(255, 236, 110);
-        filter: drop-shadow(0 0 0.9rem rgb(255, 239, 120));
-        border-radius: 50px;
-      
-      }
-      
-        div {
-          & circle#Ellipse_3 {
-            fill: rgb(255, 255, 181);
-          }
-      
-          .brightness {
-            position: absolute;
-            filter: blur(30px);
-            top: 143px;
-            right: -24px;
-            z-index: -1;
-            fill: yellow;
-            opacity: 1;
-          }
-        }
-
-        h1, h2, h3, h4, h5, h6, p {
-          color: white;
-        }
-      
-        #Group_29 #Path_27,
-        #Group_29 #Path_28,
-        #Group_29 #Path_29,
-        #Group_29 #Path_30,
-        #Group_29 #Path_31,
-        #Group_29 #Path_32,
-        #Group_29 #Rectangle_38 {
-          fill: white;
-        }
-      
-        #Path_34,
-        #Path_36,
-        #Path_42,
-        #Path_38,
-        #Path_40,
-        #Path_44, 
-        #Path_46, 
-        #Path_48, 
-        #Path_50, 
-        #Path_52{
-          stroke-width: 1px;
-          transition: stroke-width .5s;
-        }      
-      
-
+  --kunst-in-c-rood: #dc2531;
+  --kunst-in-c-wit: white;
+  --kunst-in-c-zwart: black;
+  --kunstwerk-titel: "New York Extra Large", sans-serif;
 }
 
 /* ----------------------------------------------------------
@@ -100,13 +30,13 @@ html:has([value="darkmode"]:checked) {
 -----------------------------------------------------------*/
 
 .fixed-width {
-    max-width: var(--max-width);
-    width: 100%;
-    margin: auto;
+  max-width: var(--max-width);
+  width: 100%;
+  margin: auto;
 }
 
 .margin-top-150 {
-    margin-top: 150px;
+  margin-top: 150px;
 }
 
 /* ----------------------------------------------------------
@@ -114,667 +44,73 @@ html:has([value="darkmode"]:checked) {
 -----------------------------------------------------------*/
 
 body {
-    font-family: var(--font-family);
-    transition: 0.5s;
+  font-family: var(--font-family);
+  transition: 0.5s;
 }
 
 h1 {
-    font-size: 3.5em;
-    font-weight: 700;
+  font-size: 3.5em;
+  font-weight: 700;
 }
 h2 {
-    font-size: 2.5em;
+  font-size: 2.5em;
 }
 h3 {
-    font-size: 2em;
+  font-size: 2em;
 }
 h4 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
+  font-size: 1.5em;
+  margin-bottom: 20px;
 }
 h5 {
-    font-size: 1.2em;
-    margin-bottom: 20px;
+  font-size: 1.2em;
+  margin-bottom: 20px;
 }
 h6 {
-    font-size: 1em;
+  font-size: 1em;
 }
 
 blockquote {
-    font-style: italic;
-    font-size: 1.5em;
-    padding: 20px;
-    border-left: 5px solid #000;
-    margin: 20px 0;
+  font-style: italic;
+  font-size: 1.5em;
+  padding: 20px;
+  border-left: 5px solid #000;
+  margin: 20px 0;
 }
 
 p {
-    font-size: var(--standard-font-size);
-    line-height: 1.5;
+  font-size: var(--standard-font-size);
+  line-height: 1.5;
 }
 
 a {
-    text-decoration: none;
-    color: red;
-    font-size: var(--standard-font-size);
-    text-decoration: underline;
+  text-decoration: none;
+  color: red;
+  font-size: var(--standard-font-size);
+  text-decoration: underline;
 
-    &:hover,
-    &:focus,
-    &:focus-visible {
-        color: blue;
-    }
-}
-
-#lamp {
-    width: 80px;
-    height: 160px;
-    overflow: inherit;
-}
-
-#lamp-svgrepo-com-2 {
-    transition: .5s;
-  cursor: pointer;
-
-  &:hover {
-    transition: .5s; 
-
-    & circle#Ellipse_3 {
-        fill: rgb(255, 236, 110);
-    }
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    color: blue;
   }
-  
 }
-
-circle#Ellipse_3 {
-  fill: gainsboro;
-  transition: .5s; 
-
-}
-
 /* ----------------------------------------------------------
----- LOGO ANIMATION
+---- MAIN
 -----------------------------------------------------------*/
-
-.logo #Group_29 path {
-  transition: transform .5s; 
-}
-
-.logo svg:hover {
-
-& #Group_29 #Path_27 {
-  transform: translateY(20px);
-}
-
-& #Group_29 #Path_28 {
-  transform: translateY(26px) translateX(-67px);
-}
-
-& #Group_29 #Path_29 {
-  transform: translateY(40px) translateX(-110px);
-}
-
-& #Group_29 #Path_30 {
-  transform: translateY(6px) translateX(-80px);
-}
-
-& #Group_29 #Path_31 {
-  transform: translateY(-16.5px) translateX(-105px);
-}
-
-& #Group_29 #Path_32 {
-  transform: translateY(-46px) translateX(22px);
-}
-
-& #Group_29 #Rectangle_38 {
-  transform: translateY(41px) translateX(105px);
-}
-
-& #Group_29 #Path_33 {
-  transform: translateY(-32px) translateX(140px);
-}
-
-& #Path_49,
-& #Path_47,
-& #Path_45,
-& #Path_43,
-& #Path_41,
-& #Path_39,
-& #Path_37,
-& #Path_35,
-& #Path_34 {
-  opacity: 0;
-  transition: .5s;
-}
-
-& #Path_34,
-& #Group_22,
-& #Group_23,
-& #Group_24,
-& #Group_25,
-& #Group_26,
-& #Group_27,
-& #Group_28 {
-  opacity: 0;
-  transition: .5s;
-}
-
-}
-
- #Group_22,
- #Group_23,
- #Group_24,
- #Group_25,
- #Group_26,
- #Group_27,
- #Group_28,
- #Path_34 {
-  opacity: 1;
-  transition: .5s; 
-}
-
-#Path_49,
-#Path_47,
-#Path_45,
-#Path_43,
-#Path_41,
-#Path_39,
-#Path_37,
-#Path_35,
-#Path_34 {
-  opacity: 1;
-  transition: .5s;
-}
-
-header {
-    position: fixed;
-    justify-content: space-between;
-    max-width: var(--max-width);
-    width: 100%;
-    margin: auto;
-    height: 110px;
-    z-index: 9999;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-
-    & nav {
-        position: fixed;
-        display: grid;
-        grid-template-columns: 1fr auto auto;
-        grid-template-rows: auto;
-        gap: 0px 20px;
-        grid-template-areas: ". . .";
-        justify-content: space-between;
-        align-items: center;
-        max-width: var(--max-width);
-        width: 100%;
-        padding-top: 20px;
-
-        & .logo {
-            z-index: 9999;
-            /* & svg {
-                height: 75px;
-            } */
-        }
-
-        & ul {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            list-style: none;
-            background-color: var(--kunst-in-c-wit);
-            padding: 0;
-            margin: 0;
-            padding: 1.5em 2em;
-            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-            border-radius: 50px;
-            height: fit-content;
-            margin-right: 50px;
-            margin-top: -10px;
-            transition: .5s;
-            border:  solid transparent 1px;
-
-
-
-            & li {
-                margin: 0 20px;
-            }
-
-            & a {
-                text-decoration: none;
-                color: #000;
-                font-weight: 400;
-                text-decoration: none;
-            }
-        }
-
-        & .darkmode {
-            position: absolute;
-            right: 0;
-            top: 0;
-        }
-
-        & input {
-            appearance: none;
-        }
-
-        & .hamburger {
-            display: none;
-            flex-direction: column;
-            justify-content: space-around;
-            width: 30px;
-            height: 21px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            z-index: 10;
-
-            & .bar {
-                width: 100%;
-                height: 3px;
-                background-color: black;
-                border-radius: 5px;
-                transition: all 0.3s;
-            }
-        }
-
-        & .mobile-menu {
-            display: none;
-            flex-direction: column;
-        }
-    }
-}
 
 main {
-    position: relative;
-    width: 100%;
-}
-
-@media (max-width: 1200px) {
-    :root {
-        --max-width: 100%;
-    }
-
-}
-
-@media (max-width: 900px) {
-    header{
-        & nav{
-            & ul{
-                display: none;
-            }
-
-            & .hamburger {
-                display: flex;
-                margin-right: 80px;
-            }
-
-            & .mobile-menu {
-                display: block;
-                flex-direction: column;
-                background-color: #f2f2f2;
-                position: absolute;
-                top: 0;
-                transform: translateX(100%);
-                width: 100%;
-                border-top: 1px solid #ddd;
-                transition: all 0.3s;
-
-                &.show {
-                    display: flex;
-                    height: 100vh;
-                    transform: translateX(0);
-                }
-
-                & ul {
-                    flex-direction: column;
-                    width: 100%;
-                    display: flex;
-                    box-shadow: none;
-                    padding: 0;
-                    border-radius: 0;
-                    margin: 0;
-                    margin-top: 140px;
-                    border-top: 1px solid #000;
-                }
-
-                & ul li {
-                    margin: 0;
-                    padding: 1rem;
-                    border-bottom: 1px solid #ddd;
-                }
-
-                & ul li a {
-                    color: #000;
-                    text-align: center;
-                    width: 100%;
-                    display: block;
-                }
-            }
-
-            & .hamburger.active .bar:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
-            }
-
-            & .hamburger.active .bar:nth-child(2) {
-                opacity: 0;
-            }
-
-            & .hamburger.active .bar:nth-child(3) {
-                transform: rotate(-45deg) translate(5px, -5px);
-            }
-        
-        }
-    }
-  }
-
-@container style(--darkmode: true) {
-    body {
-        background-color: rgb(21, 21, 21);
-    }
+  position: relative;
+  width: 100%;
 }
 
 /* ----------------------------------------------------------
----- FOOTER 
+---- MEDIA QUERIES
 -----------------------------------------------------------*/
 
-
-@media (min-width: 600px) {
-
-  footer {
-    .parent {
-      position: relative;
-      bottom: 0;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: 1fr;
-      grid-column-gap: 10px;
-      grid-row-gap: 0px;
-      margin: 0 1rem;
-
-      .imgFooter {
-        grid-area: 1 / 1 / 2 / 2;
-        background-image: url('/images/kunst.png');
-        background-size: cover;
-        background-position: center;
-      }
-
-      .colofonFooter {
-        position: relative;
-        grid-area: 1 / 2 / 2 / 3;
-        background-color: var(--kunst-in-c-rood);
-        padding: 2rem;
-        color: var(--kunst-in-c-wit);
-        height: fit-content;
-
-        & .colofon-contact {
-          width: 100%;
-          flex-wrap: wrap;
-          display: flex;
-          flex-direction: row;
-          gap: 1rem;
-          align-items: center;
-          margin-bottom: 20px;
-
-          p {
-            transition: .5s .5s;
-          }
-
-          a {
-            width: 2.5rem;
-            height: 2.5rem;
-            border: 2px solid var(--kunst-in-c-wit);
-            border-radius: 100%;
-            justify-content: center;
-            display: flex;
-            align-items: center;
-          }
-
-          i {
-            transition: .5s;
-          }
-
-          & a:hover,
-          a:focus {
-            background-color: var(--kunst-in-c-wit);
-
-            & i {
-              color: var(--kunst-in-c-rood);
-            }
-
-            &+p {
-              text-decoration: underline;
-            }
-
-
-          }
-        }
-
-        & .colofon-social-media {
-          display: flex;
-          gap: 1rem;
-
-          & a {
-            aspect-ratio: 1/1;
-            width: 2.5rem;
-            border: 2px solid var(--kunst-in-c-wit);
-            border-radius: 50%;
-            justify-content: center;
-            display: flex;
-            align-items: center;
-          }
-
-          i {
-            transition: .5s;
-          }
-
-          & a:hover,
-          a:focus {
-            background-color: var(--kunst-in-c-wit);
-
-            i {
-              color: var(--kunst-in-c-rood);
-            }
-          }
-
-
-        }
-
-        & ul {
-          padding: 0;
-
-          & li {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 1rem;
-
-            & a {
-              color: white;
-              text-decoration: none;
-              border: solid var(--kunst-in-c-wit) 2px;
-              padding: .7rem 1rem;
-              border-radius: 10rem;
-              width: fit-content;
-              transition: .2s;
-              display: flex;
-              align-items: center;
-
-              & i {
-                margin-left: 1rem;
-                transition: .2s;
-
-              }
-
-              /* & svg {
-                fill: white;
-                margin-left: 1rem;
-              } */
-            }
-
-
-
-            & a:hover,
-            & a:focus,
-            & a:focus-visible {
-              background-color: white;
-              color: var(--kunst-in-c-rood);
-              border: solid var(--kunst-in-c-rood) 2px;
-              margin-right: 1rem;
-
-              & i {
-                margin-left: .7rem;
-              }
-            }
-          }
-        }
-
-        & .colofon-contact,
-        & .colofon-social-media {
-          & a {
-            color: var(--kunst-in-c-wit);
-            text-decoration: none;
-          }
-        }
-
-        & img {
-          position: absolute;
-          bottom: 0;
-          right: 0;
-          width: clamp(25%, 30%, 30%)
-        }
-      }
-    }
-
-    .sub-footer {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      color: var(--kunst-in-c-rood);
-      font-weight: 500;
-      justify-content: center;
-
-      & h6 {
-        font-size: .7rem;
-        margin: 0;
-        font-weight: 400;
-
-      }
-
-      & ul {
-        display: flex;
-        padding: 0;
-        gap: 2rem;
-
-        & li {
-          list-style-type: none;
-          margin: 0;
-
-          & a {
-            text-decoration: none;
-            font-size: .7rem;
-            color: var(--kunst-in-c-rood);
-          }
-        }
-      }
-    }
+@media (max-width: 1200px) {
+  :root {
+    --max-width: 100%;
   }
 }
 
-
-/*  Agenda Styling start */
-.event_container {
-
-  & .agenda-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-
-  & .event_header {
-    display: flex;
-    align-items: center;
-    margin: 1rem 0;
-    justify-content: space-between;
-
-
-   & h1 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      margin: 0;
-    }
-
-    & a {
-      margin: 0;
-      color: var(--kunst-in-c-rood);
-      text-decoration: underline;
-    }
-
-  }
-
-  & .view-all {
-    display: block;
-    text-align: right;
-    color: red;
-    text-decoration: none;
-    margin-bottom: 20px;
-  }
-
-  & .events {
-    border-top: 1px solid #000;
-  }
-
-  & .event {
-    border-bottom: 1px solid #000;
-    padding: 2rem 0;
-    display: flex;
-
-    & p {
-      margin: 0;
-      color: #666;
-    }
-
-    & h2 {
-      font-size: 2em;
-      margin: 0;
-      width: fit-content;
-    }
-  }
-
-  & .arrow-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    aspect-ratio: 1/1;
-    width: 4rem;
-    border: 2.5px solid var(--kunst-in-c-rood);
-    border-radius: 50%;
-    background-color: rgba(255, 0, 0, 0);
-    text-decoration: none;
-    color: var(--kunst-in-c-rood);
-    font-size: 1.5rem;
-    margin-left: auto;
-    transition: .5s ease-in-out;
-
-    & i {
-      transition: .5s;
-    }
-  }
-
-  & .arrow-link:hover,
-  & .arrow-link:focus {
-    background-color: var(--kunst-in-c-rood);
-    /* color: white; */
-
-    & i {
-      transform: rotate(-30deg);
-
-      color: white;
-      transition:
-        color .5s,
-        transform .2s .2s;
-    }
-
-  }
-}

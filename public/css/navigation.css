@@ -1,0 +1,456 @@
+/* ----------------------------------------------------------
+---- Darkmode Button (lamp)
+-----------------------------------------------------------*/
+
+html:has([value="darkmode"]:checked) {
+  --darkmode: true;
+
+  header {
+    & nav {
+      & ul {
+        box-shadow: rgba(31, 31, 31, 0.2) 0px 2px 8px 0px;
+        background-color: rgb(16, 16, 16);
+        border:  solid var(--kunst-in-c-wit) 1px;
+        & li {
+          & a {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  & circle#Ellipse_3 {
+    fill: rgb(255, 236, 110);
+    filter: drop-shadow(0 0 0.9rem rgb(255, 239, 120));
+    border-radius: 50px;
+  }
+
+  div {
+    & circle#Ellipse_3 {
+      fill: rgb(255, 255, 181);
+    }
+
+    .brightness {
+      position: absolute;
+      filter: blur(30px);
+      top: 143px;
+      right: -24px;
+      z-index: -1;
+      fill: yellow;
+      opacity: 1;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    color: white;
+  }
+
+  #Group_29 #Path_27,
+  #Group_29 #Path_28,
+  #Group_29 #Path_29,
+  #Group_29 #Path_30,
+  #Group_29 #Path_31,
+  #Group_29 #Path_32,
+  #Group_29 #Rectangle_38 {
+    fill: white;
+  }
+
+  #Path_34,
+  #Path_36,
+  #Path_42,
+  #Path_38,
+  #Path_40,
+  #Path_44,
+  #Path_46,
+  #Path_48,
+  #Path_50,
+  #Path_52 {
+    stroke-width: 1px;
+    transition: stroke-width 0.5s;
+  }
+}
+
+#lamp {
+  width: 80px;
+  height: 160px;
+  overflow: inherit;
+}
+
+#lamp-svgrepo-com-2 {
+  transition: 0.5s;
+  cursor: pointer;
+
+  &:hover {
+    transition: 0.5s;
+
+    & circle#Ellipse_3 {
+      fill: rgb(255, 236, 110);
+    }
+  }
+}
+
+circle#Ellipse_3 {
+  fill: gainsboro;
+  transition: 0.5s;
+}
+
+/* ----------------------------------------------------------
+---- LOGO ANIMATION
+-----------------------------------------------------------*/
+
+.logo #Group_29 path,
+.logo #Group_29 path.active {
+transition: transform 0.5s;
+}
+
+.logo svg {
+width: auto;
+}
+
+.logo svg.active {
+/* height: 70px; */
+margin-top: -15px;
+}
+
+.logo svg:hover,
+.logo svg.active {
+& #Group_29 #Path_27 {
+  transform: translateY(20px);
+}
+
+& #Group_29 #Path_28 {
+  transform: translateY(26px) translateX(-67px);
+}
+
+& #Group_29 #Path_29 {
+  transform: translateY(40px) translateX(-110px);
+}
+
+& #Group_29 #Path_30 {
+  transform: translateY(6px) translateX(-80px);
+}
+
+& #Group_29 #Path_31 {
+  transform: translateY(-16.5px) translateX(-105px);
+}
+
+& #Group_29 #Path_32 {
+  transform: translateY(-46px) translateX(22px);
+}
+
+& #Group_29 #Rectangle_38 {
+  transform: translateY(41px) translateX(105px);
+}
+
+& #Group_29 #Path_33 {
+  transform: translateY(-32px) translateX(140px);
+}
+
+& #Path_49,
+& #Path_47,
+& #Path_45,
+& #Path_43,
+& #Path_41,
+& #Path_39,
+& #Path_37,
+& #Path_35,
+& #Path_34 {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+& #Path_34,
+& #Group_22,
+& #Group_23,
+& #Group_24,
+& #Group_25,
+& #Group_26,
+& #Group_27,
+& #Group_28 {
+  opacity: 0;
+  transition: 0.5s;
+}
+}
+
+#Group_22,
+#Group_23,
+#Group_24,
+#Group_25,
+#Group_26,
+#Group_27,
+#Group_28,
+#Path_34 {
+opacity: 1;
+transition: 0.5s;
+}
+
+#Path_49,
+#Path_47,
+#Path_45,
+#Path_43,
+#Path_41,
+#Path_39,
+#Path_37,
+#Path_35,
+#Path_34 {
+opacity: 1;
+transition: 0.5s;
+}
+
+/* ----------------------------------------------------------
+---- START OF HEADER
+-----------------------------------------------------------*/
+
+header {
+  position: fixed;
+  justify-content: space-between;
+  width: 100%;
+  margin: auto;
+  height: 110px;
+  z-index: 9999;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: height 0.3s;
+
+  &.active {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 0px;
+    padding: 0;
+    margin-right: 0px;
+    margin-top: 0px;
+    animation: colorChange 0.3s both;
+    height: 70px;
+    transition: height 0.3s;
+
+    & nav {
+      padding: 2px;
+      transition: padding 0.3s;
+
+      & .logo {
+        height: 70px;
+      }
+    }
+
+    & ul {
+      box-shadow: none;
+    }
+  }
+
+  & nav {
+    position: fixed;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    grid-template-rows: auto;
+    gap: 0;
+    grid-template-areas: ". . .";
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--max-width);
+    width: 100%;
+    padding-top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    & .logo {
+      z-index: 9999;
+    }
+
+    & ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+      background-color: var(--kunst-in-c-wit);
+      padding: 0;
+      margin: 0;
+      padding: 1.5em 2em;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      border-radius: 50px;
+      height: fit-content;
+      margin-right: 50px;
+      margin-top: -10px;
+
+      & li {
+        margin: 0 20px;
+      }
+
+      & a {
+        text-decoration: none;
+        color: #000;
+        font-weight: 400;
+        text-decoration: none;
+      }
+    }
+
+    & .darkmode {
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 9;
+    }
+
+    & input {
+      appearance: none;
+      width: 80px;
+      display: block;
+      height: 180px;
+      top: 0;
+      position: absolute;
+      right: 0;
+      z-index: -1;
+    }
+
+    & .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 30px;
+      height: 21px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 10;
+
+      & .bar {
+        width: 100%;
+        height: 3px;
+        background-color: black;
+        border-radius: 5px;
+        transition: all 0.3s;
+      }
+    }
+
+    & .mobile-menu {
+      display: none;
+      flex-direction: column;
+    }
+  }
+}
+
+/* ----------------------------------------------------------
+---- @MEDIA + @CONTAINER QUERIES
+-----------------------------------------------------------*/
+
+@media (max-width: 1200px) {
+  header {
+    & nav {
+      box-sizing: border-box;
+      padding-inline: 20px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .logo svg {
+    height: 70px;
+  }
+
+  .logo svg.active {
+    margin-top: 2px;
+  }
+
+  header {
+    &.active {
+      & nav {
+        padding: 0;
+        padding-inline: 20px;
+      }
+    }
+  }
+
+  header {
+    & nav {
+      & ul {
+        display: none;
+      }
+
+      & .hamburger {
+        display: flex;
+        margin-right: 50px;
+        margin-top: -5px;
+      }
+
+      & .mobile-menu {
+        /* display: block; */
+        flex-direction: column;
+        background-color: #ffffff;
+        position: absolute;
+        top: 0;
+        transform: translateX(100%);
+        width: 100%;
+        border-top: 1px solid #ddd;
+        transition: all 0.3s;
+
+        &.show {
+          display: flex;
+          height: 100vh;
+          transform: translateX(0);
+        }
+
+        & ul {
+          flex-direction: column;
+          width: 100%;
+          display: flex;
+          box-shadow: none;
+          padding: 0;
+          border-radius: 0;
+          margin: 0;
+          margin-top: 115px;
+          border-top: 1px solid #000;
+
+          &.active {
+            margin-top: 65px;
+            transition: 0.2s;
+          }
+        }
+
+        & ul li {
+          margin: 0;
+          padding: 1rem;
+          width: 100%;
+          border-bottom: 1px solid #e6e6e6;
+        }
+
+        & ul li a {
+          color: #000;
+          text-align: start;
+          width: 100%;
+          display: block;
+          padding-inline: 20px;
+
+          &::after {
+            /* arrow to right */
+            content: "\2192";
+            margin-left: 10px;
+            position: absolute;
+          }
+        }
+      }
+
+      & .hamburger.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      & .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      & .hamburger.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+    }
+  }
+}
+
+@container style(--darkmode: true) {
+  body {
+    background-color: rgb(21, 21, 21);
+  }
+}
