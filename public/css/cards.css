@@ -1,0 +1,38 @@
+:root {
+    --font-family: "Open Sans", sans-serif;
+    --black-font-color: #000000;
+    --white-font-color: #ffffff;
+    --transparent-bg: transparent;
+    --standard-font-size: 16px;
+
+    --max-width: 1200px;
+
+    --kunst-in-c-rood: #DC2531;
+    --kunst-in-c-rood-hover: #581324;
+    --kunst-in-c-wit: white;
+    --kunst-in-c-zwart: black;
+    --kunstwerk-titel: 'New York Extra Large', sans-serif;
+}
+
+/* ----------------------------------------------------------
+---- CARDS
+-----------------------------------------------------------*/
+
+.section-cards {
+    & .title {
+        h2 {
+            text-align: center;
+        }
+    }
+
+    & .cards-wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+
+        .card {
+            width: 100px;
+            background-color: var(--kunst-in-c-rood);
+        }
+    }
+}
