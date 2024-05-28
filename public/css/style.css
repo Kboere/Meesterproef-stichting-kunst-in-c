@@ -136,8 +136,13 @@ circle#Ellipse_3 {
     transition: transform 0.5s;
 }
 
+.logo svg{
+    width: auto;
+}
+
 .logo svg.active{
-    height: 70px;
+    /* height: 70px; */
+    margin-top: -15px;
 }
 
 .logo svg:hover,
@@ -318,6 +323,7 @@ header {
             position: absolute;
             right: 0;
             top: 0;
+            z-index: 9;
         }
 
         & input {
@@ -360,9 +366,25 @@ main {
     :root {
         --max-width: 100%;
     }
+
+    header{
+        & nav{
+            box-sizing: border-box;
+            padding-inline: 1rem;
+        }
+    
+    }
 }
 
 @media (max-width: 900px) {
+    .logo svg{
+        height: 70px;
+    }
+
+    .logo svg.active{
+        margin-top: 2px;
+    }
+
     header {
         & nav {
             & ul {
@@ -371,11 +393,12 @@ main {
 
             & .hamburger {
                 display: flex;
-                margin-right: 80px;
+                margin-right: 70px;
+                margin-top: -5px;
             }
 
             & .mobile-menu {
-                display: block;
+                /* display: block; */
                 flex-direction: column;
                 background-color: #ffffff;
                 position: absolute;
@@ -399,14 +422,13 @@ main {
                     padding: 0;
                     border-radius: 0;
                     margin: 0;
-                    margin-top: 70px;
+                    margin-top: 65px;
                     border-top: 1px solid #000;
                 }
 
                 & ul li {
                     margin: 0;
                     padding: 1rem;
-                    border-bottom: 1px solid #ddd;
                     width: 100%;
                 }
 
