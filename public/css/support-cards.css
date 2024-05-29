@@ -27,9 +27,7 @@
     & .cards-wrapper {
         display: flex;
         flex-wrap: wrap;
-        gap: 40px;
-        justify-content: center;
-        padding: 25px;
+        justify-content: space-between;
 
         .card {
             background-color: var(--kunst-in-c-wit);
@@ -107,21 +105,32 @@
         flex: 1 0 100%;
         max-width: 100%;
         width: 100%;
+        margin-top: 20px;
     }
 }
 
 @media screen and (min-width: 601px) and (max-width: 768px) {
     .card {
-        flex: 1 0 calc(50% - 40px);
-        max-width: calc(50% - 40px);
-        width: calc(50% - 40px);
+        flex: 1 0 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+        width: calc(50% - 20px);
+    }
+
+    .section-cards {
+        & .cards-wrapper {
+            justify-content: space-around;
+
+            & .card:last-of-type{
+                margin-top: 20px;
+            }
+        }
     }
 }
 
 @media only screen and (min-width: 769px) {
     .card {
-        flex: 1 0 calc(33.33% - 40px);
-        max-width: calc(33.33% - 40px);
-        width: calc(33.33% - 40px);
+        flex: 1 0 calc(33.33% - 20px);
+        max-width: calc(33.33% - 20px);
+        width: calc(33.33% - 20px);
     }
 }
