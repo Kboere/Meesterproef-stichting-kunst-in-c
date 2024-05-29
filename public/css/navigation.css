@@ -84,6 +84,16 @@ html:has([value="darkmode"]:checked) {
   overflow: inherit;
 }
 
+#Group_6 #Path_79.active{
+  transform: translateY(-80px);
+  transition: .3s;
+}
+
+#lamp-svgrepo-com.active{
+  transform: translate(1813px, 40px);
+  transition: .3s;
+}
+
 #lamp-svgrepo-com-2 {
   transition: 0.5s;
   cursor: pointer;
