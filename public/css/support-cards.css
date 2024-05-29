@@ -23,7 +23,10 @@ html:has([value="darkmode"]:checked) {
 
         & h2 {
             text-align: center;
+            font-family: var(--kunstwerk-titel);
             color: var(--kunst-in-c-rood);
+            font-weight: 600;
+            font-style: italic;
         }
         & p {
             max-width: 550px;
