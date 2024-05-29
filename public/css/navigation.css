@@ -32,6 +32,10 @@ html:has([value="darkmode"]:checked) {
         }
       
       }
+
+      #Group_6 #Path_79{
+        stroke: #313131;
+      }
     }
   }
 
@@ -98,10 +102,11 @@ html:has([value="darkmode"]:checked) {
   overflow: inherit;
 }
 
-#Group_6 #Path_79.active{
+#Group_6 #Path_79{
+  &.active{
   transform: translateY(-80px);
   transition: .3s;
-}
+}}
 
 #lamp-svgrepo-com.active{
   transform: translate(1813px, 40px);
