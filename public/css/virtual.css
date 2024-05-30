@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+
+
+
+.virtual_container {
+  position: relative;
+  width: 100%;
+  background: rgb(107, 0, 7);
+  background: linear-gradient(90deg, rgba(107, 0, 7, 1) 0%, rgba(213, 29, 57, 1) 48%, rgba(114, 2, 11, 1) 100%);
+  height: 400px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 5rem 0;
+
+  & h2 {
+    position: relative;
+    z-index: 2;
+    color: white;
+    font-size: clamp(1.75rem, -1.85rem + 14.4vw, 6.25rem);
+    font-family: "Unbounded", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    user-select: none;
+    letter-spacing: inherit;
+    transition: letter-spacing .5s cubic-bezier(0.86, 0, 0.07, 1);
+
+    &:hover {
+      letter-spacing: 1rem;
+      color: rgba(255, 255, 255, 0);
+      -webkit-text-stroke: white 3px;
+    }
+  }
+
+  & p {
+
+    color: white;
+    width: 50%;
+    /* font-size: 1.3vw; */
+    font-size: clamp(1rem, 0.8rem + 0.8vw, 1.25rem);
+    text-align: center;
+    margin: 0 auto;
+    user-select: none;
+  }
+
+  & img:first-of-type {
+    z-index: 2;
+    width: 120px;
+    position: absolute;
+    top: -6vw;
+    right: 50px;
+    rotate: 10deg;
+    animation: float 6s ease-in-out infinite;
+    user-select: none;
+
+  }
+
+  & img:nth-of-type(2) {
+    z-index: 2;
+    width: 120px;
+    position: absolute;
+    bottom: -10%;
+    left: 4%;
+    rotate: -10deg;
+    animation: float2 6s ease-in-out infinite;
+    user-select: none;
+
+  }
+
+  & a {
+    position: relative;
+    z-index: 3;
+    text-decoration: none;
+    color: white;
+    padding: 1rem 2rem;
+    border: solid white 2px;
+    border-radius: 100px;
+    width: fit-content;
+    margin: 1rem auto 0;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0);
+    transition: .2s ease-out;
+
+    &:hover,
+    :focus {
+      background-color: rgb(255, 255, 255);
+      color: var(--kunst-in-c-rood);
+
+      & i {
+        margin-left: .5rem;
+      }
+
+    }
+
+    & i {
+      transition: .2s;
+    }
+
+  }
+
+
+  & .achtergrond_polygon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    z-index: 1;
+    mix-blend-mode: soft-light;
+    opacity: .3;
+    filter: grayscale(1);
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .virtual_container h2 {
+    /* font-size: 8vw; */
+  }
+
+  .virtual_container p {
+    /* font-size: 1.5vw; */
+  }
+}
+
+@media (max-width: 768px) {
+  .virtual_container h2 {
+    /* font-size: 6vw; */
+  }
+
+  .virtual_container p {
+    /* font-size: 3vw; */
+    width: 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  .virtual_container h2 {
+    /* font-size: 5vw; */
+  }
+
+  .virtual_container p {
+    /* font-size: 3vw; */
+    width: 80%;
+  }
+
+  .virtual_container{
+    & img{
+      &:first-of-type,
+      &:nth-of-type(2){
+        width: 80px;
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .virtual_container h2 {
+    /* font-size: 5vw; */
+  }
+
+  .virtual_container p {
+    /* font-size: 4vw; */
+    width: 80%;
+  }
+}
+
+
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+
+  50% {
+    transform: translatey(-20px);
+  }
+
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+@keyframes float2 {
+  0% {
+    transform: translatey(-20px);
+  }
+
+  50% {
+    transform: translatey(0px);
+  }
+
+  100% {
+    transform: translatey(-20px);
+  }
+}
