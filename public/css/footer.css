@@ -2,6 +2,8 @@
 ---- FOOTER 
 -----------------------------------------------------------*/
 footer {
+  padding-top: 75px;
+  
   .parent {
     position: relative;
     bottom: 0;

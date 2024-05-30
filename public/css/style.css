@@ -46,8 +46,16 @@
   padding-right: 15px;
 }
 
+.section-spacing {
+  padding-block: 75px;
+}
+
 .margin-top-150 {
   margin-top: 150px;
+}
+
+.margin-top-200 {
+  margin-top: 200px;
 }
 
 /* ----------------------------------------------------------
