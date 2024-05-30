@@ -15,6 +15,10 @@ html:has([value="darkmode"]:checked) {
         & li {
           & a {
             color: white;
+
+            &:hover {
+              color: var(--kunst-in-c-rood);
+            }
           }
         }
       }
@@ -318,6 +322,10 @@ header {
         color: #000;
         font-weight: 400;
         text-decoration: none;
+
+        &:hover {
+          color: var(--kunst-in-c-rood);
+        }
       }
     }
 
