@@ -1,5 +1,3 @@
-MUIS 
-
 document.addEventListener('DOMContentLoaded', function() {
       let circularCursor = document.getElementById('circularcursor') 
       let virtualContainers = document.querySelectorAll('.mouse-element') 
