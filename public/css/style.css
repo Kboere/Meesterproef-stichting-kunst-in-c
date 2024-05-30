@@ -56,23 +56,41 @@ body {
 h1 {
   font-size: 3.5em;
   font-weight: 700;
+  font-family: var(--kunstwerk-titel);
+  font-weight: 600;
+  font-style: italic;
 }
 h2 {
   font-size: 2.5em;
+  font-family: var(--kunstwerk-titel);
+  font-weight: 700;
+  font-style: italic;
 }
 h3 {
   font-size: 2em;
+  font-family: var(--kunstwerk-titel);
+  font-weight: 700;
+  font-style: italic;
 }
 h4 {
   font-size: 1.5em;
   margin-bottom: 20px;
+  font-family: var(--kunstwerk-titel);
+  font-weight: 700;
+  font-style: italic;
 }
 h5 {
   font-size: 1.2em;
   margin-bottom: 20px;
+  font-family: var(--kunstwerk-titel);
+  font-weight: 700;
+  font-style: italic;
 }
 h6 {
   font-size: 1em;
+  font-family: var(--kunstwerk-titel);
+  font-weight: 700;
+  font-style: italic;
 }
 
 blockquote {

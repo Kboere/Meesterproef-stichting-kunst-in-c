@@ -16,6 +16,13 @@ html:has([value="darkmode"]:checked) {
             background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(3,68,86,0) 50%, rgb(0, 0, 0) 100%);
             transition: 1s 5s cubic-bezier(0.075, 0.82, 0.165, 1);
         }
+
+        &.normal{
+            background-image: none;
+            & .pageheader-gradient {
+                background: none;
+            }
+        }
     }
 }
 
@@ -88,6 +95,84 @@ html:has([value="darkmode"]:checked) {
                         }
                     }
                 }
+            }
+        }
+    }
+
+    &.normal{
+        background-image: none;
+
+        & .pageheader-gradient {
+            background: none;
+
+            & .content-wrapper{
+
+
+                & .col-left{
+                    & .content{
+                        & .title{
+                            & h1{
+                                color: var(--kunst-in-c-rood);
+                            }
+                        }
+                        & .text{
+                            & p{
+                                margin-block: 10px;
+                            }
+
+                            & ul{
+                                margin-block: 30px;
+
+                                & li{
+                                    margin-block: 5px;
+                                    list-style-type: none;
+
+                                    &:first-of-type{
+                                        font-weight: bold;
+                                    }
+                                }
+                            }
+
+                        }
+
+                        & a{
+                            color: white;
+                            background-color: var(--kunst-in-c-rood);
+                            text-decoration: none;
+                            border: solid var(--kunst-in-c-rood) 2px;
+                            padding: 0.7rem 1rem;
+                            border-radius: 10rem;
+                            width: fit-content;
+                            transition: 0.2s;
+                            display: flex;
+                            align-items: center;
+
+                            & i{
+                                margin-left: 0.7rem;
+                            }
+
+                            &:hover,
+                            &:focus,
+                            &:focus-visible{
+                                background-color: white;
+                                color: var(--kunst-in-c-rood);
+                                border: solid var(--kunst-in-c-rood) 2px;
+                                margin-right: 1rem;
+
+                                & i{
+                                    margin-left: 1rem;
+                                    transition: .3s;
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+
+                & .col-right{
+
+                }
+            
             }
         }
     }
