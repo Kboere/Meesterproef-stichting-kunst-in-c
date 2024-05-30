@@ -1,6 +1,25 @@
 /* ----------------------------------------------------------
 ---- Event Container
 -----------------------------------------------------------*/
+
+html:has([value="darkmode"]:checked) {
+  --darkmode: true;
+
+  & .events {
+    border-top: 1px solid #ffffff;
+
+    & .event {
+      padding: 2rem 0;
+      display: flex;
+
+      &:not(:last-of-type) {
+        border-bottom: 1px solid #ffffff;
+      }
+    }
+  }
+}
+
+
 @media (min-width: 600px) {
   .event_container {
     & .agenda-container {
@@ -41,9 +60,12 @@
     }
 
     & .event {
-      border-bottom: 1px solid #000;
       padding: 2rem 0;
       display: flex;
+
+      &:not(:last-of-type) {
+        border-bottom: 1px solid #000;
+      }
 
       & p {
         margin: 0;
@@ -93,9 +115,9 @@
 }
 
 @media (max-width: 600px) {
-    .fixed-width {
-        width: auto;
-      }
+  .fixed-width {
+      width: auto;
+    }
 
   .event_container {
     padding: 0 2rem;
@@ -134,9 +156,6 @@
       margin-bottom: 20px;
     }
 
-    & .events {
-      border-top: 1px solid #000;
-    }
 
     & .event {
       border-bottom: 1px solid #000;
