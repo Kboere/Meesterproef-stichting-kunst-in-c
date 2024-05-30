@@ -30,6 +30,10 @@ html:has([value="darkmode"]:checked) {
       background-image: none;
       & .pageheader-gradient {
         background: none;
+
+        & li{
+            color: var(--kunst-in-c-wit);
+        }
       }
     }
   }
