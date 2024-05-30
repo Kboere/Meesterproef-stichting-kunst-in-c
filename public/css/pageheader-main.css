@@ -2,9 +2,9 @@
 ---- PAGEHEADER MAIN
 -----------------------------------------------------------*/
 
-.margin-top-200 {
+/* .margin-top-200 {
   margin-top: 200px;
-}
+} */
 
 html:has([value="darkmode"]:checked) {
   --darkmode: true;
@@ -117,7 +117,7 @@ html:has([value="darkmode"]:checked) {
     }
   }
 
-  &.normal {
+  /* &.normal {
     background-image: none;
     height: inherit;
 
@@ -226,7 +226,7 @@ html:has([value="darkmode"]:checked) {
         }
       }
     }
-  }
+  } */
 }
 
 @media only screen and (max-width: 425px) {
