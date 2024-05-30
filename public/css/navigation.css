@@ -291,6 +291,7 @@ header {
     transform: translateX(-50%);
     & .logo {
       z-index: 9999;
+      width: fit-content;
     }
 
     & ul {
