@@ -12,6 +12,7 @@ html:has([value="darkmode"]:checked) {
 }
 
 .section-cards {
+  padding: 4rem 0;
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -68,6 +69,11 @@ html:has([value="darkmode"]:checked) {
                   font-weight: 500;
                   font-size: 25px;
                   font-style: italic;
+              }
+
+              & .thumbnail-description {
+                font-size: .8rem;
+                margin-top: 1rem;
               }
           }
 
