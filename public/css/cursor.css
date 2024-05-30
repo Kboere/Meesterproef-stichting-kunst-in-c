@@ -1,0 +1,15 @@
+#circularcursor {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: solid 2px black;
+  border-radius: 50%;
+  z-index: 10000000000;
+  pointer-events: none;
+  transition: left 0.1s ease-out, top 0.1s ease-out; 
+
+  &.active{
+    border-color: #ffffff;
+  }
+}

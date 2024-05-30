@@ -5,12 +5,14 @@
 @import "footer.css";
 @import "agenda.css";
 @import "pageheader-main.css";
+@import "virtual.css";
+@import "cursor.css";
 
 
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
+  padding: 0;  
 }
 
 :root {
@@ -90,11 +92,18 @@ a {
   color: red;
   font-size: var(--standard-font-size);
   text-decoration: underline;
+  transition: .5s;
 
-  &:hover,
-  &:focus,
-  &:focus-visible {
-    color: blue;
+  &:hover{
+    color: salmon;
+  }
+
+  &:focus, 
+  :focus-visible {
+    padding: .5rem;
+    background-color: yellow;
+    color: black;
+    box-shadow: yellow 0 0 10px 3px;
   }
 }
 /* ----------------------------------------------------------
