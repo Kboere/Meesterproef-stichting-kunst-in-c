@@ -20,6 +20,15 @@ app.get("/", async function (req, res) {
   }
 });
 
+app.get("/steun-ons", async function (req, res) {
+  try {
+    res.render("pages/help");
+  } catch (err) {
+    console.error("Error retrieving page:", err);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
 // Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
