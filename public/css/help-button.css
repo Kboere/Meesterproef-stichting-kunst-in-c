@@ -1,0 +1,54 @@
+/* ----------------------------------------------------------
+---- HELP BUTTON
+-----------------------------------------------------------*/
+
+.help-btn-wrapper {
+    position: fixed;
+    display: flex;
+    right: 16px;
+    bottom: 22px;
+    padding: 5px 0;
+    background-color: var(--kunst-in-c-rood);
+    border-radius: 5px;
+    z-index: 1;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: .3s;
+    transform-origin: right bottom;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    & .col-left, .col-right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    & .col-left {
+        flex: 1 0 40%;
+        max-width: 40%;
+        width: 40%;
+
+        i {
+            color: var(--kunst-in-c-wit);
+        }
+    }   
+
+    & .col-right {
+        flex: 1 0 60%;
+        max-width: 60%;
+        width: 60%;
+        border-left: 2px solid var(--kunst-in-c-wit);
+        padding: 0 10px;
+
+        & p {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--kunst-in-c-wit);
+            text-transform: uppercase;
+            width: 85px;
+            line-height: 1.3;
+        }
+    }
+}
