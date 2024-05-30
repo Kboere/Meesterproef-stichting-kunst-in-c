@@ -18,14 +18,13 @@
     position: relative;
     z-index: 2;
     color: white;
-    font-size: 6vw;
+    font-size: clamp(1.75rem, -1.85rem + 14.4vw, 6.25rem);
     font-family: "Unbounded", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
     user-select: none;
     letter-spacing: inherit;
     transition: letter-spacing .5s cubic-bezier(0.86, 0, 0.07, 1);
-    -webkit-text-stroke: white 3px;
 
     &:hover {
       letter-spacing: 1rem;
@@ -37,8 +36,9 @@
   & p {
 
     color: white;
-    width: 30%;
-    font-size: 1.3vw;
+    width: 50%;
+    /* font-size: 1.3vw; */
+    font-size: clamp(1rem, 0.8rem + 0.8vw, 1.25rem);
     text-align: center;
     margin: 0 auto;
     user-select: none;
@@ -46,10 +46,10 @@
 
   & img:first-of-type {
     z-index: 2;
-    width: 11%;
+    width: 120px;
     position: absolute;
-    top: -6rem;
-    right: 10%;
+    top: -6vw;
+    right: 50px;
     rotate: 10deg;
     animation: float 6s ease-in-out infinite;
     user-select: none;
@@ -58,7 +58,7 @@
 
   & img:nth-of-type(2) {
     z-index: 2;
-    width: 11%;
+    width: 120px;
     position: absolute;
     bottom: -10%;
     left: 4%;
@@ -118,41 +118,52 @@
 
 @media (max-width: 1200px) {
   .virtual_container h2 {
-    font-size: 8vw;
+    /* font-size: 8vw; */
   }
 
   .virtual_container p {
-    font-size: 1.5vw;
+    /* font-size: 1.5vw; */
   }
 }
 
 @media (max-width: 768px) {
   .virtual_container h2 {
-    font-size: 6vw;
+    /* font-size: 6vw; */
   }
 
   .virtual_container p {
-    font-size: 1.5vw;
+    /* font-size: 3vw; */
+    width: 70%;
   }
 }
 
 @media (max-width: 480px) {
   .virtual_container h2 {
-    font-size: 5vw;
+    /* font-size: 5vw; */
   }
 
   .virtual_container p {
-    font-size: 2vw;
+    /* font-size: 3vw; */
+    width: 80%;
+  }
+
+  .virtual_container{
+    & img{
+      &:first-of-type,
+      &:nth-of-type(2){
+        width: 80px;
+      }
+    }
   }
 }
 
 @media (max-width: 375px) {
   .virtual_container h2 {
-    font-size: 5vw;
+    /* font-size: 5vw; */
   }
 
   .virtual_container p {
-    font-size: 3.5vw;
+    /* font-size: 4vw; */
     width: 80%;
   }
 }
