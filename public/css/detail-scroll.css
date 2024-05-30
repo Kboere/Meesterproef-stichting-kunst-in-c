@@ -1,0 +1,120 @@
+.section {
+    min-height: 100vh;
+    padding: 120px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+
+    &.scroll-section {
+        &.section_to-pin {
+            height: 100vh;
+            left: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            overflow: hidden;
+
+            .section_pin {
+                height: 100vh;
+                padding: 120px 10vw;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                .content_wrapper {
+                    min-width: 777px;
+
+                    .content {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 30px;
+                        max-width: 475px;
+
+                        & h2 {
+                            font-family: var(--kunstwerk-titel);
+                            color: var(--kunst-in-c-rood);
+                            font-weight: 600;
+                            font-style: italic;
+                        }
+
+                        & .art-details {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 20px;
+
+                            & .detail-group {
+                                display: flex;
+                                justify-content: space-between;
+                                border-bottom: 1px solid var(--black-font-color);
+    
+                                p {
+                                    margin-bottom: 5px;
+                                    
+                                    &:first-of-type {
+                                        font-weight: bold;
+                                    }
+    
+                                    &:last-of-type {
+                                        color: var(--kunst-in-c-rood);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .image_wrapper {
+                    min-width: 60vw;
+                    padding: 0vw 6vw 0vw 6vw;
+                    position: relative;
+                    opacity: 0.7;
+                    transition: opacity 0.3s cubic-bezier(0.51, 0.18, 0, 0.88);
+
+                    .image {
+                        width: 100%;
+                        height: auto;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+
+                    &.active {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.grid-container {
+    width: 100%;
+}
+
+@media screen and (min-width: 640px) {
+    h1 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    h1 {
+        font-size: 48px;
+        line-height: 58px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    h1 {
+        font-size: 56px;
+        line-height: 66px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    h1 {
+        font-size: 64px;
+        line-height: 74px;
+    }
+}
