@@ -1,3 +1,27 @@
+/* ----------------------------------------------------------
+---- PAGEHEADER DETAIL
+-----------------------------------------------------------*/
+
+html:has([value="darkmode"]:checked) {
+  --darkmode: true;
+
+  .kunst-info {
+    background-color: transparent;
+
+    .kunstenaar {
+      color: var(--kunst-in-c-wit);
+    }
+
+    ul {
+      li {
+        &:after {
+          color: var(--kunst-in-c-wit);
+        }
+      }
+    }
+  }
+}
+
 .detail-parent {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -5,6 +29,7 @@
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   height: 100dvh;
+  padding-bottom: 75px;
 
   .kunst-info {
     grid-area: 1 / 1 / 2 / 2;
