@@ -20,6 +20,10 @@ app.get("/", async function (req, res) {
   }
 });
 
+app.get('/route', async (req, res) =>{
+  res.render('partials/route-optie')
+})
+
 app.get("/steun-ons", async function (req, res) {
   try {
     res.render("pages/help");
