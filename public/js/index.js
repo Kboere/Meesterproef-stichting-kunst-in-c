@@ -8,7 +8,19 @@ function toggleMenu() {
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener('DOMContentLoaded', function () {
-  initialiseApp();
+  let gsapScrollInitialized = false;
+
+  function checkScreenSize() {
+    if (window.innerWidth >= 900 && !gsapScrollInitialized) {
+      wrapImages();
+      initialiseApp();
+      gsapScrollInitialized = true;
+    } else if (window.innerWidth < 900 && gsapScrollInitialized) {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      gsapScrollInitialized = false;
+      wrapImages();
+    }
+  }
 
   function initialiseApp() {
     initialiseGSAPScrollTriggerPinningHorizontal();
@@ -34,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     imageWrappers.forEach(imageWrapper => {
       let imageWrapperID = imageWrapper.id;
-
       gsap.to(imageWrapper, {
         scrollTrigger: {
           trigger: imageWrapper,
@@ -65,4 +76,64 @@ document.addEventListener('DOMContentLoaded', function () {
     gsap.ticker.lagSmoothing(0);
   }
 
+  function wrapImages() {
+    const wrappers = document.querySelectorAll('.image_wrapper');
+    const sectionPin = document.getElementById('section_pin');
+    let container = document.getElementById('image_container');
+
+    if (window.innerWidth < 900) {
+      if (!container) {
+        container = document.createElement('div');
+        container.id = 'image_container';
+        container.classList.add('image_container');
+      }
+    } else {
+      if (container) {
+        wrappers.forEach(wrapper => {
+        });
+        container.remove();
+      }
+    }
+  }
+
+  // Initial call
+  checkScreenSize();
+
+  // Call on resize
+  window.addEventListener('resize', function () {
+    checkScreenSize();
+  });
 });
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  var filterButton = document.getElementById("filter-button");
+  var dropdownContent = document.getElementById("myDropdown");
+
+  filterButton.addEventListener("click", function () {
+    dropdownContent.classList.toggle("show");
+  });
+
+  // Close the dropdown if the user clicks outside of it
+  window.addEventListener("click", function (event) {
+    if (!event.target.matches('#filter-button')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      for (var i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  });
+});
+
+
+
+
+
+
+
+
+

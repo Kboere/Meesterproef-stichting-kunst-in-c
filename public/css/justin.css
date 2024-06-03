@@ -1,43 +1,4 @@
-/* $companyColourOne:      #FEFEFE;
-$companyColourTwo:      #E8EDDF;
-$companyColourThree:    #CFDBD5;
-$companyColourFour:     #F5CB5C;
-$companyColourFive:     #4B4E4B;
-$companyColourSix:      #242423;
-$companyColourSeven:    #0A0A0A;
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Manrope:wght@400;600&display=swap');
-
-$montserrat:            'Montserrat', sans-serif;
-$manrope:               'Manrope', sans-serif;
-
-// START; Lenis Scroll.
-// html {
-//   &.lenis {
-//     height: auto;
-//   }
-// }
-
-// .lenis {
-//   &.lenis-smooth {
-//     scroll-behavior: auto;
-
-//     [data-lenis-prevent] {
-//       overscroll-behavior: contain;
-//     }
-//   }
-
-//   &.lenis-scrolling {
-//     iframe {
-//       pointer-events: none;
-//     }
-//   }
-
-//   &.lenis-stopped {
-//     overflow: hidden;
-//   }
-// }
-// END; Lenis Scroll. */
+/* costum properties*/
 :root {
     --font-family: "Open Sans", sans-serif;
     --black-font-color: #000000;
@@ -53,6 +14,70 @@ $manrope:               'Manrope', sans-serif;
 
 }
 
+/* filter */
+#filter-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    list-style: none;
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+
+    & li {
+        margin-right: 40px;
+
+        p {
+            color: rgb(212, 212, 212);
+        }
+
+        button {
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 1.2em;
+            align-items: center;
+            gap: .6em;
+        }
+    }
+
+    & li:first-of-type {
+        min-width: 47vw;
+        padding: 0 6vw 0 6vw;
+        margin-right: 0;
+    }
+}
+
+
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    width: 200px;
+    height: 300px;
+    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    z-index: 1;
+
+    & form {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Show the dropdown menu when the filter button is clicked */
+.show {
+    display: block;
+}
+
+
+
+
+
+/*Sidescroll text gebied*/
 #text-wrapper {
     display: flex;
     flex-direction: column;
@@ -65,7 +90,7 @@ h1 {
     font-size: var(--standard-font-size);
     color: var(--kunst-in-c-rood);
     line-height: 1.2em;
-    width: 50vw;
+    width: 35vw;
 }
 
 p {
@@ -86,7 +111,6 @@ button {
     display: flex;
     gap: 1.2em;
     cursor: pointer;
-    ;
 
     & i {
         transform: scalex(2) scaley(1.7);
@@ -98,94 +122,170 @@ button {
     }
 }
 
-#filter-wrap {
-    display: flex;
-    flex-direction: row;
-    justify-content:flex-start;
-    list-style: none;
-    position: absolute;
-    top: 150px;
-    width: 100%;
-
-    & li{
-        margin-right: 30px;
-    }
-
-    & li:first-of-type{
-        min-width: 50vw;
-        padding: 0 6vw 0 6vw;
-        margin-right: 0;
-    }
-}
-
-li p {
-    color: rgb(212, 212, 212);
-}
-
-
 .section {
-    min-height: 100vh;
-    padding-top: 120px;
-    padding-bottom: 120px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    overflow: hidden;
-
-
-
     &.four {
-        background-color: white;
-        z-index: 4;
-
         &.section_to-pin {
             height: 100vh;
-            left: 0;
             display: flex;
-            justify-content: flex-start;
             align-items: center;
-            overflow: hidden;
-            padding: 0 !important;
 
-            .section_pin {
+            & .section_pin {
                 height: 100vh;
-                /* padding: 120px 12vw 120px 12vw; */
                 display: flex;
-                justify-content: flex-start;
-                align-items: flex-start;
                 margin-top: 400px;
 
-                .content_wrapper {
-                    min-width: 300px;
+                & .content_wrapper {
                     padding: 0vw 6vw 0vw 6vw;
                 }
 
-                .image_wrapper {
-                    min-width: 400px;
-                    position: relative;
-                    opacity: .7;
-                    transition: opacity .3s cubic-bezier(0.51, 0.18, 0, 0.88);
+                & .parent_wrapper {
+                    display: flex;
+                    gap: 2rem;
+                    margin-right: 5em;
 
-                    .image {
-                        width: 350px;
+                    & .image_wrapper {
+                        position: relative;
                         height: 65vh;
 
-                        object-fit: cover;
-                        object-position: center;
-                        border-radius: 10px;
-                    }
+                        & .image {
+                            width: 350px;
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: 10px;
+                            opacity: .7;
+                            transition: .2s;
 
-                    &.active {
-                        opacity: 1;
+                            &:hover,
+                            :active {
+                                opacity: 1;
+                            }
+                        }
+
+
+                        /* Overlay op de images */
+                        & .dark_overlay {
+                            background-color: #00000086;
+                            width: 100%;
+                            position: absolute;
+                            bottom: 0;
+                            padding: 20px;
+                            border-radius: 0 0 10px 10px;
+
+                            & button {
+                                gap: .6em;
+                                font-size: 2em;
+                                color: var(--white-font-color);
+                                align-items: center;
+
+                                & i {
+                                    color: var(--white-font-color);
+                                    transform: scalex(1) scaley(.85);
+                                    transition: .3s;
+                                }
+
+                                &:hover i {
+                                    transform: translatex(.5em) scalex(1) scaley(.85);
+                                }
+                            }
+
+                            & p {
+                                color: white;
+                                margin: 0;
+                                font-size: 1em;
+                                font-style: italic;
+                                font-weight: 200;
+                            }
+                        }
+
                     }
                 }
             }
         }
     }
+}
 
 
 
-    .grid-container {
-        width: 100%;
+/* Responsive */
+
+@media only screen and (max-width: 900px) {
+    & #text-wrapper {
+        align-items: left;
+    }
+
+    & #filter-wrap {
+        position: static;
+        justify-content: space-between;
+
+        & li:first-of-type {
+            padding: 0 6vw 0 0;
+        }
+
+        & li button {
+            white-space: nowrap;
+        }
+    }
+
+    h1 {
+        width: 85vw;
+        text-align: left;
+        line-height: 1.2em;
+    }
+
+    p {
+        text-align: left;
+        max-width: 70vw;
+    }
+
+    button {
+        text-align: left;
+    }
+
+    & .section_pin {
+        flex-direction: column;
+        gap: 2em;
+    }
+
+    .section {
+        &.four {
+            &.section_to-pin {
+                height: auto;
+
+                & .section_pin {
+                    height: auto;
+                    margin-top: 150px;
+
+                    & .content_wrapper {
+                        padding: 0 6vw 0 1em;
+                    }
+
+                    & .parent_wrapper {
+                        flex-wrap: wrap;
+                        padding: 0 1em;
+                        margin-right: 0;
+                        margin-bottom: 2em;
+
+                        & .image_wrapper {
+                            width: calc(50% - 20px);
+                            height: 65vw;
+
+                            & .image {
+                                width: 100%;
+                            }
+
+                            & .dark_overlay {
+                                & button {
+                                    font-size: 20px;
+                                }
+
+                                & p {
+                                    font-size: .8em;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
