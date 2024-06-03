@@ -1,3 +1,7 @@
+html {
+    width: 100%;
+}
+
 /* costum properties*/
 :root {
     --font-family: "Open Sans", sans-serif;
@@ -12,6 +16,11 @@
     --kunst-in-c-zwart: black;
     --kunstwerk-titel: 'New York Extra Large', sans-serif;
 
+
+}
+
+.red-marker {
+    display: none;
 }
 
 /* filter */
@@ -28,11 +37,11 @@
     & li {
         margin-right: 40px;
 
-        p {
+        & p {
             color: rgb(212, 212, 212);
         }
 
-        button {
+        & button {
             font-family: var(--font-family);
             font-weight: 400;
             font-size: 1.2em;
@@ -142,6 +151,9 @@ button {
                     display: flex;
                     gap: 2rem;
                     margin-right: 5em;
+                    margin-left: 1em;
+
+
 
                     & .image_wrapper {
                         position: relative;
@@ -213,12 +225,22 @@ button {
         align-items: left;
     }
 
-    & #filter-wrap {
+    #filter-wrap {
         position: static;
         justify-content: space-between;
+        margin-top: 1em;
 
         & li:first-of-type {
-            padding: 0 6vw 0 0;
+            padding: 0;
+        }
+
+        & li {
+            margin: 0;
+        }
+
+        & .dropdown li {
+            display: flex;
+            justify-content: end;
         }
 
         & li button {
@@ -227,26 +249,36 @@ button {
     }
 
     h1 {
-        width: 85vw;
+        width: 100%;
         text-align: left;
         line-height: 1.2em;
     }
 
     p {
         text-align: left;
-        max-width: 70vw;
+        max-width: 100%;
     }
 
     button {
         text-align: left;
     }
 
-    & .section_pin {
+    .section_pin {
         flex-direction: column;
         gap: 2em;
     }
 
-    .section {
+    .red-marker {
+        display: block;
+        height: 2em;
+        width: 2em;
+        position: absolute;
+        left: 0;
+        border-radius: 10px;
+        background-color: gold;
+    }
+
+    & .section {
         &.four {
             &.section_to-pin {
                 height: auto;
@@ -254,32 +286,65 @@ button {
                 & .section_pin {
                     height: auto;
                     margin-top: 150px;
+                    width: 100%;
 
                     & .content_wrapper {
-                        padding: 0 6vw 0 1em;
+                        padding: 1em;
                     }
 
                     & .parent_wrapper {
-                        flex-wrap: wrap;
-                        padding: 0 1em;
-                        margin-right: 0;
+                        flex-direction: column;
+                        padding: 0 2em;
+                        border-left: 5px dashed red;
                         margin-bottom: 2em;
 
                         & .image_wrapper {
-                            width: calc(50% - 20px);
-                            height: 65vw;
+                            width: 100%;
+                            height: 10em;
+                            display: flex;
+                            justify-content: start;
+
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                translate: -50% -100%;
+                                top: 50%;
+
+                                left: -2.13em;
+                                height: 15px;
+                                width: 15px;
+                                border-radius: 100%;
+                                background-color: red;
+                            }
+
+
 
                             & .image {
-                                width: 100%;
+                                width: 10em;
+                                height: 10em;
                             }
 
                             & .dark_overlay {
+                                background-color: transparent;
+                                border-bottom: 1px black;
+                                position: static;
+                                background-color: transparent;
+                                height: 10em;
+                                width: 50%;
+
                                 & button {
-                                    font-size: 20px;
+                                    font-size: 2em;
+                                    color: black;
+                                    padding-top: 1em;
+
+                                    & i {
+                                        color: black;
+                                    }
                                 }
 
                                 & p {
-                                    font-size: .8em;
+                                    color: black;
+                                    font-size: 1em;
                                 }
                             }
                         }

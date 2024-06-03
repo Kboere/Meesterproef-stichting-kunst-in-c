@@ -12,13 +12,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function checkScreenSize() {
     if (window.innerWidth >= 900 && !gsapScrollInitialized) {
-      wrapImages();
       initialiseApp();
       gsapScrollInitialized = true;
     } else if (window.innerWidth < 900 && gsapScrollInitialized) {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
       gsapScrollInitialized = false;
-      wrapImages();
     }
   }
 
@@ -33,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let containerAnimation = gsap.to(sectionPin, {
       scrollTrigger: {
         trigger: '#section_to-pin',
-        start: 0,
+        start: 'top top',
         end: () => "+=" + sectionPin.offsetWidth,
         pin: true,
         scrub: true,
@@ -76,26 +74,6 @@ document.addEventListener('DOMContentLoaded', function () {
     gsap.ticker.lagSmoothing(0);
   }
 
-  function wrapImages() {
-    const wrappers = document.querySelectorAll('.image_wrapper');
-    const sectionPin = document.getElementById('section_pin');
-    let container = document.getElementById('image_container');
-
-    if (window.innerWidth < 900) {
-      if (!container) {
-        container = document.createElement('div');
-        container.id = 'image_container';
-        container.classList.add('image_container');
-      }
-    } else {
-      if (container) {
-        wrappers.forEach(wrapper => {
-        });
-        container.remove();
-      }
-    }
-  }
-
   // Initial call
   checkScreenSize();
 
@@ -104,8 +82,6 @@ document.addEventListener('DOMContentLoaded', function () {
     checkScreenSize();
   });
 });
-
-
 
 document.addEventListener("DOMContentLoaded", function () {
   var filterButton = document.getElementById("filter-button");
@@ -128,12 +104,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
-
-
-
-
-
-
-
-
