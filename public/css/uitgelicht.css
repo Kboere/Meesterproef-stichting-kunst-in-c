@@ -1,0 +1,86 @@
+.section-uitgelicht {
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    & .content-wrapper {
+        --s: 150px; /* control the size */
+        --g: 30px;  /* control the gap */
+        --f: 1.5;   /* control the scale factor */
+        
+        display: grid;
+        gap: var(--g);
+        width: 100%;
+        height: 60vh;
+        aspect-ratio: 1;
+        grid-template-columns: repeat(3, auto);
+        position: relative;
+
+        /* &:before {
+            content: "";
+            font-family: var(--kunstwerk-titel);
+            font-size: 30px;
+            background-image: url("/images/sparkles2.svg");
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            bottom: -25px;
+            right: -10px;
+            transform: rotate(15deg);
+            z-index: 1;
+        }
+
+        &:after {
+            content: "Uitgelicht";
+            font-family: var(--font-family);
+            font-size: 26px;
+            background-color: var(--kunst-in-c-rood);
+            position: absolute;
+            top: -50px;
+            left: -40px;
+            transform: rotate(-20deg);
+            padding: 15px;
+            color: white;
+            border-radius: 5px;
+        } */
+
+        figure {
+            position: relative;
+
+            img {
+                width: 0;
+                height: 0;
+                min-height: 100%;
+                min-width: 100%;
+                object-fit: cover;
+                cursor: pointer;
+                filter: grayscale(80%);
+                transition: .35s linear;
+        
+                &:hover {
+                    filter: grayscale(0);
+                    width:  calc(var(--s)*var(--f));
+                    height: calc(var(--s)*var(--f));
+                }
+            }
+
+            & .image-text {
+                height: 100%;
+                width: 100%;
+                background-color: rgba(255, 255, 255, 0.313);
+                position: absolute;
+                top: 0;
+                padding: 30px;
+                display: none;  
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .section-uitgelicht {
+        & .content-wrapper {
+            grid-template-columns: repeat(1, auto);
+        }
+    }
+}

@@ -14,6 +14,7 @@
 @import "mouse.css";
 @import "event-detail.css";
 @import "breadcrumb.css";
+@import "uitgelicht.css";
 
 
 * {
@@ -52,6 +53,10 @@
 
 .section-spacing {
   padding-block: 75px;
+}
+
+.section-spacing-lg {
+  padding: 150px 0 75px 0;
 }
 
 .margin-top-150 {

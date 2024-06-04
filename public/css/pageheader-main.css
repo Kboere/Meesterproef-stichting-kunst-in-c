@@ -312,6 +312,7 @@ html:has([value="darkmode"]:checked) {
 }
 
 @media screen and (min-width: 426px) and (max-width: 768px) {
+  .section-pageheader {
     .content-wrapper {
         padding-top: 100px;
 
@@ -327,9 +328,11 @@ html:has([value="darkmode"]:checked) {
             }
         }
     }
+  }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .section-pageheader {
     .content-wrapper {
         padding-top: 100px;
 
@@ -349,6 +352,7 @@ html:has([value="darkmode"]:checked) {
             }
         }
     }
+  }
 }
 
 @media only screen and (min-width: 1025px) {
