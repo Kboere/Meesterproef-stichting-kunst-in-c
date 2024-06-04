@@ -1,0 +1,41 @@
+/* ----------------------------------------------------------
+---- Breadcrumb
+-----------------------------------------------------------*/
+
+html:has([value="darkmode"]:checked) {
+    --darkmode: true;
+
+    .breadcrumb {
+        li {
+            color: var(--kunst-in-c-wit);
+            
+            &:after {
+                color: var(--kunst-in-c-wit);
+            }
+        }
+    }
+}
+
+.breadcrumb {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+
+    li {
+        list-style-type: none;
+        position: relative;
+
+        &:after {
+            content: "/";
+            position: absolute;
+            margin-left: 8px;
+        }
+
+        &:last-of-type {
+
+            &:after {
+                content: "";
+            }
+        }
+    }
+}

@@ -12,8 +12,11 @@ app.set("view engine", "ejs");
 // Define routes
 app.get("/", async function (req, res) {
   try {
-    
-    res.render("pages/index");
+    res.render('pages/index', {
+      breadcrumbs: [
+          { name: 'Home', url: '/' }
+      ]
+  });
   } catch (err) {
     console.error("Error retrieving page:", err);
     res.status(500).send("Internal Server Error");
@@ -35,6 +38,35 @@ app.get("/kunstwerk/1", async function (req, res) {
   } catch (err) {
     console.error("Error retrieving page:", err);
     res.status(500).send("Internal Server Error");
+  }
+});
+
+app.get('/events', async function (req, res) {
+  try {
+      res.render('pages/events', {
+          breadcrumbs: [
+              { name: 'Home', url: '/' },
+              { name: 'Events', url: '/events' }
+          ]
+      });
+  } catch (err) {
+      console.error('Error retrieving page:', err);
+      res.status(500).send('Internal Server Error');
+  }
+});
+
+app.get('/events/event1', async function (req, res) {
+  try {
+      res.render('pages/event-detail', {
+          breadcrumbs: [
+              { name: 'Home', url: '/' },
+              { name: 'Events', url: '/events' },
+              { name: 'Event 1', url: '/events/event1' }
+          ]
+      });
+  } catch (err) {
+      console.error('Error retrieving page:', err);
+      res.status(500).send('Internal Server Error');
   }
 });
 

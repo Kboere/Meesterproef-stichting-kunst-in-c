@@ -12,6 +12,8 @@
 @import "virtual.css";
 @import "detail-scroll.css";
 @import "mouse.css";
+@import "event-detail.css";
+@import "breadcrumb.css";
 
 
 * {

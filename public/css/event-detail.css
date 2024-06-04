@@ -1,0 +1,135 @@
+/* ----------------------------------------------------------
+---- Event details
+-----------------------------------------------------------*/
+
+html:has([value="darkmode"]:checked) {
+    --darkmode: true;
+
+    .section-event-detail {
+        &:after {
+            color: var(--kunst-in-c-rood);
+            opacity: 0.35;
+        }
+    }
+}
+
+.section-event-detail {
+    width: 100%;
+    position: relative;
+    padding-top: 200px;
+
+    &:after {
+        content: "\f073";
+        font-family: 'Font Awesome 6 Free', Arial, sans-serif;
+        font-size: 23em;
+        position: absolute;
+        top: 200px;
+        right: 150px;
+        transform: rotate(10deg);
+        opacity: 0.05;
+
+    }
+
+    & .section-intro {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        color: var(--kunst-in-c-zwart);
+
+        & span {
+            color: var(--kunst-in-c-rood);
+        }
+    }
+
+    .content {
+        padding-top: 30px;
+        display: flex;
+        gap: 40px;
+
+        .col-left {
+            flex: 1 0 calc(50% - 40px);
+            max-width: calc(50% - 40px);
+            width: calc(50% - 40px);
+        }
+
+        .col-right {
+            flex: 1 0 calc(50% - 40px);
+            max-width: calc(50% - 40px);
+            width: calc(50% - 40px);
+        }
+    }
+}
+
+
+@media only screen and (max-width: 425px) {
+    .section-event-detail {
+        padding-top: 150px;
+
+        &:after {
+            font-size: 10em;
+            right: 40px;
+        }
+
+        & .section-intro {
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: column;
+            color: var(--kunst-in-c-zwart);
+
+            h1 {
+                font-size: 2.5em;
+            }
+        }
+
+        .content {
+            flex-direction: column;
+
+            .col-left, .col-right {
+                flex: 1 0 100%;
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 768px) {
+    .section-event-detail {
+        padding-top: 150px;
+
+        &:after {
+            font-size: 16em;
+            right: 50px;
+        }
+
+        & .section-intro {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+
+            h1 {
+                font-size: 6vw;
+            }
+        }
+
+        .content {
+            flex-direction: column;
+            
+            .col-left, .col-right {
+                flex: 1 0 100%;
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .section-event-detail {
+        &:after {
+            font-size: 13em;
+            right: 150px;
+        }
+    }
+}
