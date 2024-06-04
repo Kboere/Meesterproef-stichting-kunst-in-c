@@ -71,7 +71,7 @@ app.get('/events/event1', async function (req, res) {
 });
 
 app.get('/ANBI', async function (req, res) {
-  res.render('/pages/archive.ejs')
+  res.render("pages/archive.ejs");
 })
 
 // Start the server
