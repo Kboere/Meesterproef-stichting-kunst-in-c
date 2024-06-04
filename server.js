@@ -38,6 +38,15 @@ app.get("/kunstwerk/1", async function (req, res) {
   }
 });
 
+app.get("/ontdekken", async function (req, res) {
+  try {
+    res.render("pages/ontdekken");
+  } catch (err) {
+    console.error("Error retrieving page:", err);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
 // Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
