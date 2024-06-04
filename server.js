@@ -70,6 +70,10 @@ app.get('/events/event1', async function (req, res) {
   }
 });
 
+app.get('/ANBI', async function (req, res) {
+  res.render('/pages/archive.ejs')
+})
+
 // Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
