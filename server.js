@@ -29,6 +29,14 @@ app.get("/steun-ons", async function (req, res) {
   }
 });
 
+app.get('/ANBI', async function (req, res) {
+  try {
+    res.render('pages/archive.ejs')
+  } catch (error){
+    console.log("It don't work bitch")
+  }
+})
+
 app.get("/kunstwerk/1", async function (req, res) {
   try {
     res.render("pages/details/detail");
