@@ -16,63 +16,113 @@
         grid-template-columns: repeat(3, auto);
         position: relative;
 
-        /* &:before {
-            content: "";
-            font-family: var(--kunstwerk-titel);
-            font-size: 30px;
-            background-image: url("/images/sparkles2.svg");
-            width: 60px;
-            height: 60px;
-            position: absolute;
-            bottom: -25px;
-            right: -10px;
-            transform: rotate(15deg);
-            z-index: 1;
-        }
-
         &:after {
             content: "Uitgelicht";
             font-family: var(--font-family);
             font-size: 26px;
-            background-color: var(--kunst-in-c-rood);
+            color: var(--kunst-in-c-wit);
             position: absolute;
-            top: -50px;
-            left: -40px;
+            top: -30px;
+            left: -35px;
+            background-color: var(--kunst-in-c-rood);
+            border-radius: 10px;
             transform: rotate(-20deg);
-            padding: 15px;
-            color: white;
-            border-radius: 5px;
-        } */
+            padding: 10px 20px;
+        }
 
-        figure {
+        & figure {
             position: relative;
+            overflow: hidden;
 
-            img {
-                width: 0;
-                height: 0;
+            &:hover {
+                cursor: pointer;
+
+                & img {
+                    filter: grayscale(0);
+                    width: calc(var(--s) * var(--f));
+                    height: calc(var(--s) * var(--f));
+                }
+
+                & .image-text {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    color: var(--kunst-in-c-wit);
+                
+                    & .button-holder {
+                        & .btn {
+                            background-color: var(--kunst-in-c-rood);
+                            padding: .7rem 1rem;
+                            border-radius: 2rem;
+                            border: 2px solid var(--kunst-in-c-rood);
+                            color: var(--white-font-color);
+                            font-size: 16px;
+                            transition: .2s;
+                
+                            &:hover,
+                            &:focus,
+                            &:focus-visible {
+                                cursor: pointer;
+                                background-color: var(--kunst-in-c-rood-hover);
+                                border-color: var(--kunst-in-c-rood-hover);
+                            }
+                        }
+                    }
+                }
+            }
+
+            & img {
+                width: var(--s);
+                height: var(--s);
                 min-height: 100%;
                 min-width: 100%;
                 object-fit: cover;
                 cursor: pointer;
                 filter: grayscale(80%);
-                transition: .35s linear;
-        
-                &:hover {
-                    filter: grayscale(0);
-                    width:  calc(var(--s)*var(--f));
-                    height: calc(var(--s)*var(--f));
-                }
+                transition: .2s linear;
             }
 
             & .image-text {
                 height: 100%;
                 width: 100%;
-                background-color: rgba(255, 255, 255, 0.313);
+                background-color: rgba(0, 0, 0, 0.621);
                 position: absolute;
                 top: 0;
                 padding: 30px;
-                display: none;  
+                display: none;
             }
+        }
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .section-uitgelicht {
+        & .content-wrapper {
+            height: 125dvh;
+        }
+    }
+}
+
+@media only screen and (min-width: 376px) and (max-width: 425px) {
+    .section-uitgelicht {
+        & .content-wrapper {
+            height: 105dvh;
+        }
+    }
+}
+
+@media only screen and (min-width: 426px) and (max-width: 525px) {
+    .section-uitgelicht {
+        & .content-wrapper {
+           height: 100dvh;
+        }
+    }
+}
+
+@media only screen and (min-width: 526px) and (max-width: 768px) {
+    .section-uitgelicht {
+        & .content-wrapper {
+           height: 80dvh;
         }
     }
 }
@@ -81,6 +131,24 @@
     .section-uitgelicht {
         & .content-wrapper {
             grid-template-columns: repeat(1, auto);
+
+            &:after {
+                top: 0px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .section-uitgelicht {
+        & .content-wrapper {
+            &:after {
+                top: 0px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
         }
     }
 }
