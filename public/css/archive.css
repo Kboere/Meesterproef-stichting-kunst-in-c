@@ -1,0 +1,241 @@
+.pageheader-anbi {
+  display: flex;
+  justify-content: space-between;
+
+  >section:first-of-type,
+  >section:last-of-type {
+    width: calc(50% - 15px);
+  }
+
+  & h1 {
+    font-family: var(--kunstwerk-titel);
+    color: var(--kunst-in-c-rood);
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  & .art-details {
+    margin-top: 66px;
+  }
+}
+
+
+
+.content_wrapper {
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    & h2 {
+      font-family: var(--kunstwerk-titel);
+      color: var(--kunst-in-c-rood);
+      font-weight: 600;
+      font-style: italic;
+    }
+
+    & .art-details {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      & h4 {
+        margin: 0;
+        color: var(--kunst-in-c-rood);
+      }
+
+      & .detail-group {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--black-font-color);
+
+        & p {
+          margin-bottom: 5px;
+
+          &:first-of-type {
+            font-weight: bold;
+          }
+
+          &:last-of-type {
+            color: var(--kunst-in-c-rood);
+          }
+        }
+      }
+    }
+  }
+}
+
+.annual-statement {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  select[name="choose-year"] {
+    /* margin-top: 1rem; */
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+  }
+
+  .annual-info {
+    margin-top: 5rem;
+
+    & h2 {
+      font-family: var(--kunstwerk-titel);
+      color: var(--kunst-in-c-rood);
+      font-weight: 600;
+      font-style: italic;
+      margin: 0;
+    }
+
+    & p {
+      width: 48%;
+      margin: 1rem 0;
+    }
+  }
+
+  .annual-data {
+    margin-top: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+
+    .annual-item {
+      position: relative;
+      aspect-ratio: 1/1;
+      background-image: url("/images/kunst.png");
+      width: calc(100% / 4 - 15px);
+      background-size: cover;
+      box-shadow: rgba(0, 0, 0, 0.311) 0 0 5px;
+      border-radius: .5rem;
+  
+
+      .annual-text-container {
+        position: absolute;
+        bottom: 0;
+        background-color: white;
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        border-radius: 0 0 .5rem .5rem;
+
+        h4 {
+          font-size: 1rem;
+          text-align: left;
+
+        }
+
+        a {
+          display: block;
+          color: white;
+          background-color: var(--kunst-in-c-rood);
+          padding: .5rem .7rem;
+          border-radius: 200px;
+          width: fit-content;
+          margin-left: auto;
+          text-decoration: none;
+          transition: .5s;
+
+          &:hover,
+          &:focus {
+            background-color: var(--kunst-in-c-zwart);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .pageheader-anbi {
+    display: block;
+  
+    >section:first-of-type,
+    >section:last-of-type {
+      width: 100%;
+      padding: 1rem;
+    }
+    & h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+  
+    & .art-details {
+      margin-top: 0px;
+    }
+}
+
+.annual-statement {
+  display: flex;
+  flex-direction: column;
+
+  select[name="choose-year"] {
+    /* padding: .5rem 1rem; */
+    border-radius: 1rem;
+    font-size: 1rem;
+  }
+
+  .annual-info {
+    margin-top: 5rem;
+    padding: 0 1rem;
+
+    & h2 {
+      font-family: var(--kunstwerk-titel);
+      color: var(--kunst-in-c-rood);
+      font-weight: 600;
+      font-style: italic;
+      margin: 0;
+    }
+
+    & p {
+      width: 100%;
+      margin: 1rem 0;
+    }
+  }
+
+
+
+  .annual-data {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 1rem;
+
+
+    .annual-item {
+      position: relative;
+      aspect-ratio: 1/1;
+      background-image: url("/images/kunst.png");
+      width: 100%;
+      background-size: cover;
+      box-shadow: rgba(0, 0, 0, 0.311) 0 0 5px;
+      border-radius: .5rem;
+  
+
+      .annual-text-container {
+        position: absolute;
+        bottom: 0;
+        background-color: white;
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        border-radius: 0 0 .5rem .5rem;
+
+        h4 {
+          font-size: 1rem;
+          text-align: left;
+
+        }
+
+      }
+    }
+  }
+}
+
+
+}
