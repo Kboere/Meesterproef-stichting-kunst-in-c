@@ -5,6 +5,10 @@
 html:has([value="darkmode"]:checked) {
   --darkmode: true;
 
+  body {
+    background-color: var(--dark-main);
+  }
+
   header {
     &.active {
       background-color: #000;
@@ -13,6 +17,10 @@ html:has([value="darkmode"]:checked) {
     & nav {
       & ul {
         background-color: #000;
+
+        &::before {
+          background-color: black;
+        }
 
         & li {
           & a {
@@ -44,6 +52,10 @@ html:has([value="darkmode"]:checked) {
         stroke: #313131;
       }
     }
+  }
+
+  main {
+    background-color: var(--dark-main);
   }
 
   & circle#Ellipse_3 {
@@ -118,6 +130,10 @@ html:has([value="darkmode"]:checked) {
         color: white;
       }
     }
+  }
+
+  footer {
+    background-color: var(--dark-main);
   }
 }
 
