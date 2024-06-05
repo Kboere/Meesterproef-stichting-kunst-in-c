@@ -485,6 +485,8 @@ header {
           display: flex;
           height: 100vh;
           transform: translateX(0);
+          animation: fadeIn .5s forwards;
+          opacity: 0;
         }
 
         & ul {
@@ -502,30 +504,28 @@ header {
             margin-top: 65px;
             transition: 0.2s;
           }
-        }
-
-        & ul li {
-          margin: 0;
-          padding: 1rem;
-          width: 100%;
-          border-bottom: 1px solid #e6e6e6;
-        }
-
-        & ul li a {
-          color: #000;
-          text-align: start;
-          width: 100%;
-          display: block;
-          padding-inline: 20px;
-
-          &::after {
-            /* arrow to right */
-            content: "\2192";
-            margin-left: 10px;
-            position: absolute;
+      
+          & li {
+              margin: 0;
+              padding: 1rem;
+              width: 100%;
+              border-bottom: 1px solid #e6e6e6;
+              a {
+                color: #000;
+                text-align: start;
+                width: 100%;
+                display: block;
+                padding-inline: 20px;
+      
+                &::after {
+                  /* arrow to right */
+                  content: "\2192";
+                  margin-left: 10px;
+                  position: absolute;
+                }
+              }
           }
         }
-      }
 
       & .hamburger.active .bar:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
@@ -547,4 +547,5 @@ header {
     background-color: rgb(21, 21, 21);
   }
 
+}
 }
