@@ -74,6 +74,10 @@ app.get('/ANBI', async function (req, res) {
   res.render("pages/archive.ejs");
 })
 
+app.get('/privacy-verklaring', async function (req, res) {
+  res.render("pages/privacy-verklaring.ejs");
+})
+
 // Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

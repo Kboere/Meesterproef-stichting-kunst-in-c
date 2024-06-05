@@ -111,6 +111,14 @@ html:has([value="darkmode"]:checked) {
       }
     }
   }
+
+  .privacy-section {
+    ul {
+      li {
+        color: white;
+      }
+    }
+  }
 }
 
 #lamp {
