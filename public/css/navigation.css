@@ -135,6 +135,16 @@ html:has([value="darkmode"]:checked) {
   footer {
     background-color: var(--dark-main);
   }
+
+  @media (max-width: 900px) {
+    header {
+        &.active {
+            & nav {
+                background-color: black;
+            }
+        }
+    }
+}
 }
 
 #lamp {
