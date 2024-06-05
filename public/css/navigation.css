@@ -303,6 +303,7 @@ header {
 
       &::before {
         clip-path: inset(0 0 round 50px);
+        background-color: var(--header-color);
       }
     }
 
@@ -442,10 +443,17 @@ header {
   }
 
   header {
+    & nav {
+      transition: .5s;
+    }
+  }
+
+  header {
     &.active {
       & nav {
         padding: 0;
         padding-inline: 20px;
+        background-color: var(--header-color);
       }
     }
   }
