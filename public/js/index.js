@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
       initialiseApp();
       gsapScrollInitialized = true;
     } else if (window.innerWidth < 900 && gsapScrollInitialized) {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      cleanupGSAP();
       gsapScrollInitialized = false;
     }
   }
@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
         end: () => "+=" + sectionPin.offsetWidth,
         pin: true,
         scrub: true,
+        invalidateOnRefresh: true, // Recalculate on refresh
       },
       x: () => -(sectionPin.scrollWidth - document.documentElement.clientWidth) + "px",
       ease: 'none'
@@ -53,7 +54,8 @@ document.addEventListener('DOMContentLoaded', function () {
           toggleClass: {
             targets: '.' + imageWrapperID,
             className: 'active'
-          }
+          },
+          invalidateOnRefresh: true // Recalculate on refresh
         }
       });
     });
@@ -74,33 +76,40 @@ document.addEventListener('DOMContentLoaded', function () {
     gsap.ticker.lagSmoothing(0);
   }
 
+  function cleanupGSAP() {
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    gsap.killTweensOf('*');
+  }
+
   // Initial call
   checkScreenSize();
 
   // Call on resize
   window.addEventListener('resize', function () {
     checkScreenSize();
+    ScrollTrigger.refresh();
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  var filterButton = document.getElementById("filter-button");
-  var dropdownContent = document.getElementById("myDropdown");
 
-  filterButton.addEventListener("click", function () {
-    dropdownContent.classList.toggle("show");
-  });
+// document.addEventListener("DOMContentLoaded", function () {
+//   var filterButton = document.getElementById("filter-button");
+//   var dropdownContent = document.getElementById("myDropdown");
 
-  // Close the dropdown if the user clicks outside of it
-  window.addEventListener("click", function (event) {
-    if (!event.target.matches('#filter-button')) {
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      for (var i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
-    }
-  });
-});
+//   filterButton.addEventListener("click", function () {
+//     dropdownContent.classList.toggle("show");
+//   });
+
+//   // Close the dropdown if the user clicks outside of it
+//   window.addEventListener("click", function (event) {
+//     if (!event.target.matches('#filter-button')) {
+//       var dropdowns = document.getElementsByClassName("dropdown-content");
+//       for (var i = 0; i < dropdowns.length; i++) {
+//         var openDropdown = dropdowns[i];
+//         if (openDropdown.classList.contains('show')) {
+//           openDropdown.classList.remove('show');
+//         }
+//       }
+//     }
+//   });
+// });
