@@ -14,18 +14,20 @@
 
           <div class="content_wrapper">
             <div id="text-wrapper">
-              <h1>Ontdek kunst in de gemeente Castricum</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mauris magna, vestibulum a ultricies
+              <h1 class="collectie-h1">Ontdek kunst in de gemeente Castricum</h1>
+              <p class="collectie-paragraaf">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mauris
+                magna, vestibulum a ultricies
                 in, tincidunt eu mauris. Phasellus mauris ipsum, ullamcorper a quam eget, varius fringilla ante.
                 Pellentesque aliquet, lectus at finibus elementum, nisi ligula volutpao eget ex. Duis eleifend hendrerit
                 tempor</p>
-              <button>Ontdek een willekeurig kunstwerk <i class="fa-solid fa-arrow-right"></i></button>
+              <button class="collectie-button">Ontdek een willekeurig kunstwerk <i
+                  class="fa-solid fa-arrow-right"></i></button>
               <ul id="filter-wrap">
                 <li>
                   <p>Home > Collectie</p>
                 </li>
 
-                <!-- <div class="dropdown"> -->
+
                 <li><button id="filter-button"> <svg width="20" height="22" viewBox="0 0 20 22">
                       <path
                         d="M13.3333 5.07692C12.8912 5.07681 12.4672 4.89836 12.1546 4.58083C11.8421 4.26331 11.6666 3.83271 11.6667 3.38377C11.6668 2.93483 11.8425 2.50432 12.1552 2.18695C12.468 1.86958 12.892 1.69135 13.3342 1.69146C13.5531 1.69152 13.7699 1.73536 13.9721 1.82047C14.1743 1.90559 14.3581 2.03033 14.5128 2.18755C14.6676 2.34477 14.7904 2.53141 14.8741 2.7368C14.9578 2.9422 15.0009 3.16232 15.0008 3.38462C15.0008 3.60691 14.9576 3.82701 14.8738 4.03236C14.7899 4.23771 14.6671 4.42429 14.5123 4.58143C14.3574 4.73858 14.1736 4.86322 13.9713 4.94823C13.769 5.03325 13.5523 5.07698 13.3333 5.07692ZM16.5483 2.53846C16.1758 1.08308 14.8817 0 13.3333 0C11.785 0 10.4908 1.08308 10.1183 2.53846H0V4.23077H10.1183C10.4908 5.68615 11.785 6.76923 13.3333 6.76923C14.8817 6.76923 16.1758 5.68615 16.5483 4.23077H20V2.53846H16.5483ZM13.3333 20.3077C13.1144 20.3076 12.8976 20.2638 12.6954 20.1787C12.4932 20.0936 12.3094 19.9688 12.1546 19.8116C11.9999 19.6544 11.8771 19.4677 11.7934 19.2624C11.7097 19.057 11.6666 18.8368 11.6667 18.6145C11.6667 18.3922 11.7099 18.1721 11.7937 17.9668C11.8776 17.7614 12.0004 17.5749 12.1552 17.4177C12.3101 17.2606 12.4939 17.1359 12.6962 17.0509C12.8984 16.9659 13.1152 16.9222 13.3342 16.9222C13.7763 16.9223 14.2003 17.1008 14.5128 17.4183C14.8254 17.7358 15.0009 18.1664 15.0008 18.6154C15.0007 19.0643 14.825 19.4948 14.5123 19.8122C14.1995 20.1296 13.7755 20.3078 13.3333 20.3077ZM13.3333 15.2308C11.785 15.2308 10.4908 16.3138 10.1183 17.7692H0V19.4615H10.1183C10.4908 20.9169 11.785 22 13.3333 22C14.8817 22 16.1758 20.9169 16.5483 19.4615H20V17.7692H16.5483C16.1758 16.3138 14.8817 15.2308 13.3333 15.2308ZM6.66667 12.6923C6.44774 12.6923 6.23097 12.6484 6.02873 12.5633C5.82649 12.4782 5.64275 12.3534 5.48798 12.1962C5.33322 12.039 5.21047 11.8524 5.12674 11.647C5.04301 11.4416 4.99995 11.2214 5 10.9992C5.00005 10.7769 5.04323 10.5568 5.12706 10.3514C5.21089 10.1461 5.33373 9.95948 5.48857 9.80234C5.64341 9.64519 5.82722 9.52055 6.0295 9.43554C6.23178 9.35052 6.44858 9.30679 6.6675 9.30685C7.10964 9.30696 7.53362 9.48541 7.84618 9.80293C8.15874 10.1205 8.33428 10.5511 8.33417 11C8.33406 11.4489 8.15831 11.8794 7.84559 12.1968C7.53288 12.5142 7.1088 12.6924 6.66667 12.6923ZM6.66667 7.61538C5.11833 7.61538 3.82417 8.69846 3.45167 10.1538H0V11.8462H3.45167C3.82417 13.3015 5.11833 14.3846 6.66667 14.3846C8.215 14.3846 9.50917 13.3015 9.88167 11.8462H20V10.1538H9.88167C9.50917 8.69846 8.215 7.61538 6.66667 7.61538Z"
@@ -34,23 +36,10 @@
                     Filter kunstwerken</button>
                   <div class="dropdown-content" id="myDropdown">
 
-                    <!-- <form action="">
-                        <p> Locatie</p>
-                        <label for="Akersloot">
-                          <input type="checkbox" name="filter-locatie" id="akersloot" value="Akersloot">
-                          Akersloot
-                        </label>
 
-                        <p> Materiaal</p>
-                        <label for="">
-                          <input type="checkbox" name="filter-materiaal" id="brons" value="Brons">
-                          Brons
-                        </label>
-
-                      </form> -->
 
                 </li>
-                <!-- </div> -->
+
               </ul>
             </div>
           </div>
