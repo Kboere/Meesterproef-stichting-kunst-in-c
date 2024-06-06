@@ -1,0 +1,243 @@
+/* ----------------------------------------------------------
+---- Justin
+-----------------------------------------------------------*/
+
+html:has([value="darkmode"]:checked) {
+    --darkmode: true;
+
+    .cls-1 {
+        stroke: white;
+    }
+
+    .cls-1-white {
+        stroke: #151515;
+    }
+
+    .cls-2 {
+        stroke: white;
+    }
+
+    .cls-2-white {
+        stroke: #151515;
+    }
+}
+
+.section-route-animatie {
+    position: relative;
+    aspect-ratio: 100 / 32;
+    margin-bottom: 20vw;
+
+    & svg {
+        position: absolute;
+        top: 0;
+    }
+
+    svg:nth-of-type(3),
+    svg:nth-of-type(4) {
+        position: absolute;
+        top: 8vw;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        .dash-animation {
+            animation: dash 2s linear alternate reverse;
+            animation-play-state: paused;
+        }
+
+        .dash-animation2 {
+            animation: dash 2s forwards linear reverse;
+            animation-play-state: paused;
+        }
+
+        & .cls-1 {
+            fill: none;
+            stroke: black;
+            stroke-dasharray: 0 0 75 57;
+            stroke-width: 8px;
+            stroke-dashoffset: 1000;
+        }
+
+        & .cls-1-white {
+            fill: none;
+            stroke: white;
+            stroke-dasharray: 1822;
+            stroke-width: 10px;
+            stroke-dashoffset: 1000;
+        }
+
+        & .cls-2 {
+            fill: none;
+            stroke: #000;
+            stroke-dasharray: 0 0 16 16;
+            stroke-width: 8px;
+            stroke-dashoffset: 1000;
+        }
+
+        & .cls-2-white {
+            fill: none;
+            stroke: white;
+            stroke-dasharray: 10000;
+            stroke-width: 10px;
+            stroke-dashoffset: 1000;
+        }
+    }
+
+    .appear {
+        opacity: 0;
+        animation: appear .3s forwards cubic-bezier(1, 0, 0, 1);
+        animation-play-state: paused;
+    }
+
+    & .gps-icon-1 {
+        left: 12vw;
+        top: 22vw;
+        animation-delay: 2s;
+    }
+
+    & .gps-icon-2 {
+        left: 40vw;
+        top: 19vw;
+        animation-delay: 2.2s;
+    }
+
+    & .gps-icon-3 {
+        left: 92vw;
+        top: 15.5vw;
+        animation-delay: 2.4s;
+    }
+
+    & .gps-icon {
+        width: 5.1vw;
+        height: 7.4vw;
+        translate: -50% -100%;
+    }
+
+    & #bike-icon {
+        position: absolute;
+        font-size: 5.4vw;
+        left: 18.8vw;
+        top: 21.4vw;
+        transform: rotate(17deg);
+        color: #cc3035;
+        animation-delay: 2.6s;
+    }
+
+    & #walk-icon {
+        position: absolute;
+        font-size: 5.4vw;
+        left: 68vw;
+        top: 3.2vw;
+        animation-delay: 2.8s;
+        color: #cc3035;
+    }
+
+    & .content {
+        position: absolute;
+        left: 49vw;
+        top: 18vw;
+        max-width: 460px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        aspect-ratio: 100 / 32;
+
+        & .title {
+            & h2 {
+                hyphens: auto;
+            }
+        }
+    }
+}
+
+
+
+
+
+& .button-wrapper .btn {
+    background-color: var(--kunst-in-c-rood);
+    padding: .7rem 1rem;
+    border-radius: 2rem;
+    border: 2px solid var(--kunst-in-c-rood);
+    color: var(--white-font-color);
+    font-size: 16px;
+    transition: .2s;
+
+    &:hover,
+    &:focus,
+    &:focus-visible {
+        cursor: pointer;
+        background-color: var(--kunst-in-c-rood-hover);
+        border-color: var(--kunst-in-c-rood-hover);
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    .section-route-animatie {
+        margin-bottom: 60vw;
+
+        .content {
+            position: absolute;
+            top: 35vw;
+            left: 0;
+            padding-left: 1em;
+            width: 80%;
+        }
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .section-route-animatie {
+        margin-bottom: 95vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .section-route-animatie {
+        margin-bottom: 120vw;
+
+        .content {
+            width: 80%;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .section-route-animatie {
+        margin-bottom: 110vw;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    .section-route-animatie {
+        margin-bottom: 200vw;
+    }
+}
+
+@keyframes dash {
+    from {
+        stroke-dashoffset: -1822;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes appear {
+    0% {
+        transform-origin: bottom center;
+        scale: 0;
+        opacity: 1;
+    }
+
+    100% {
+        scale: 1.5;
+    }
+
+    100% {
+        opacity: 1;
+        scale: .8;
+    }
+}
