@@ -60,7 +60,7 @@ html:has([value="darkmode"]:checked) {
       font-family: var(--kunstwerk-titel);
       color: var(--kunst-in-c-rood);
       font-style: italic;
-      font-size: 6rem;  
+      font-size: 6rem;
       line-height: 4.5rem;
       text-align: right;
       font-weight: 600;
@@ -105,7 +105,7 @@ html:has([value="darkmode"]:checked) {
     }
   }
 
-  .kunst-afbeelding {
+  .castricum {
     position: relative;
     grid-area: 1 / 2 / 2 / 3;
     background-image: url(../images/background-opties-02.svg);
@@ -115,12 +115,94 @@ html:has([value="darkmode"]:checked) {
     align-items: center;
     flex-direction: column;
     background-size: cover;
+    overflow: hidden;
+
+    .fiets {
+      position: absolute;
+      bottom: -2rem;
+      width: 23rem;
+      animation: fietsAnimatie 5s forwards linear;
+      transform: translateX(200%);
+    }
+  }
+
+  .castricum-aan-zee {
+    position: relative;
+    grid-area: 1 / 2 / 2 / 3;
+    background-image: url(../images/background-opties-02.svg);
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-size: cover;
+    overflow: hidden;
+
+    .strandbal {
+      position: absolute;
+      bottom: -2rem;
+      width: 23rem;
+      animation: fietsAnimatie 5s forwards linear;
+      transform: translateX(200%);
+    }
+  }
+
+  .kunst-afbeelding {
+    position: relative;
+    grid-area: 1 / 2 / 2 / 3;
+    background-image: url("../images/castricum-aan-zee.jpg");
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-size: cover;
+    overflow: hidden;
+
+    &.castricum {
+      & .effect {
+        background-image: url("../images/fiets.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        position: absolute;
+        bottom: -2rem;
+        height: 215px;
+        width: 333px;
+        animation: fietsAnimatie 5s forwards linear;
+        transform: translateX(200%);
+      }
+    }
+
+    &.castricum-aan-zee {
+      & .effect {
+        background-image: url("../images/strandbal.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        position: absolute;
+        bottom: -2rem;
+        height: 100px;
+        width: 98px;
+        animation: strandBal 5s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transform: translateX(400%);
+  
+      }
+    }
 
     img {
       position: absolute;
       width: 300px;
       bottom: 0;
     }
+
+    .region-detail {
+      position: absolute;
+      bottom: -2rem;
+      width: 7rem;
+      animation: strandBal 5s forwards ease-in-out;
+      transform: translateX(-400%) rotate(0deg);
+    }
+
+
 
     a {
       position: absolute;
@@ -140,7 +222,7 @@ html:has([value="darkmode"]:checked) {
 }
 
 
-@media (max-width: 900px)  {
+@media (max-width: 900px) {
   .detail-parent {
     display: flex;
     flex-direction: column;
@@ -164,13 +246,13 @@ html:has([value="darkmode"]:checked) {
 
       ul {
         justify-content: flex-start;
+
         li {
-          a {
-            
-          }
+          a {}
         }
       }
     }
+
     .kunst-afbeelding {
       height: 70dvh;
       background-position: bottom;
@@ -178,3 +260,23 @@ html:has([value="darkmode"]:checked) {
   }
 }
 
+
+@keyframes fietsAnimatie {
+  from {
+    transform: translateX(200%);
+  }
+
+  to {
+    transform: translateX(-200%);
+  }
+}
+
+@keyframes strandBal {
+  from {
+    transform: translateX(400%) rotate(0);
+  }
+
+  to {
+    transform: translateX(0%) rotate(-360deg);
+  }
+}
