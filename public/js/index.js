@@ -39,11 +39,21 @@ hamburger.addEventListener("click", () => {
   toggleMenu();
 });
 
-gsap.registerPlugin(ScrollTrigger);
+function initializeGSAPScroll() {
+  gsap.registerPlugin(ScrollTrigger);
 
-(function($) {
-  $(document).ready(function() {
-    initialiseApp();
+  document.addEventListener('DOMContentLoaded', function () {
+    let gsapScrollInitialized = false;
+
+    function checkScreenSize() {
+      if (window.innerWidth >= 900 && !gsapScrollInitialized) {
+        initialiseApp();
+        gsapScrollInitialized = true;
+      } else if (window.innerWidth < 900 && gsapScrollInitialized) {
+        cleanupGSAP();
+        gsapScrollInitialized = false;
+      }
+    }
 
     function initialiseApp() {
       initialiseGSAPScrollTriggerPinningHorizontal();
@@ -51,7 +61,11 @@ gsap.registerPlugin(ScrollTrigger);
     }
 
     function initialiseGSAPScrollTriggerPinningHorizontal() {
-      let sectionPin             =   document.querySelector('#section_pin');
+      let sectionPin = document.getElementById('section_pin');
+
+      if (!sectionPin) {
+        return;
+      }
 
       let containerAnimation = gsap.to(sectionPin, {
         scrollTrigger: {
@@ -60,16 +74,16 @@ gsap.registerPlugin(ScrollTrigger);
           end: () => "+=" + sectionPin.offsetWidth,
           pin: true,
           scrub: true,
+          invalidateOnRefresh: true, // Recalculate on refresh
         },
         x: () => -(sectionPin.scrollWidth - document.documentElement.clientWidth) + "px",
         ease: 'none'
       });
 
-      var imageWrappers = sectionPin.querySelectorAll('.image_wrapper');
+      let imageWrappers = sectionPin.querySelectorAll('.image_wrapper');
 
       imageWrappers.forEach(imageWrapper => {
-        var imageWrapperID = imageWrapper.id;
-
+        let imageWrapperID = imageWrapper.id;
         gsap.to(imageWrapper, {
           scrollTrigger: {
             trigger: imageWrapper,
@@ -79,7 +93,8 @@ gsap.registerPlugin(ScrollTrigger);
             toggleClass: {
               targets: '.' + imageWrapperID,
               className: 'active'
-            }
+            },
+            invalidateOnRefresh: true // Recalculate on refresh
           }
         });
       });
@@ -88,7 +103,7 @@ gsap.registerPlugin(ScrollTrigger);
     function initialiseLenisScroll() {
       const lenis = new Lenis({
         smoothWheel: true,
-        duration: 1.2
+        duration: 0.8
       });
 
       lenis.on('scroll', ScrollTrigger.update);
@@ -99,5 +114,22 @@ gsap.registerPlugin(ScrollTrigger);
 
       gsap.ticker.lagSmoothing(0);
     }
+
+    function cleanupGSAP() {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      gsap.killTweensOf('*');
+    }
+
+    // Initial call
+    checkScreenSize();
+
+    // Call on resize
+    window.addEventListener('resize', function () {
+      checkScreenSize();
+      ScrollTrigger.refresh();
+    });
   });
-}) (jQuery);
+}
+
+// Call the function on the necessary pages
+initializeGSAPScroll();
