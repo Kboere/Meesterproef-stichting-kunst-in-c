@@ -105,61 +105,40 @@ html:has([value="darkmode"]:checked) {
     }
   }
 
-  .castricum {
-    position: relative;
-    grid-area: 1 / 2 / 2 / 3;
-    background-image: url(../images/background-opties-02.svg);
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-size: cover;
-    overflow: hidden;
-
-    .fiets {
-      position: absolute;
-      bottom: -2rem;
-      width: 23rem;
-      animation: fietsAnimatie 5s forwards linear;
-      transform: translateX(200%);
-    }
-  }
-
-  .castricum-aan-zee {
-    position: relative;
-    grid-area: 1 / 2 / 2 / 3;
-    background-image: url(../images/background-opties-02.svg);
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-size: cover;
-    overflow: hidden;
-
-    .strandbal {
-      position: absolute;
-      bottom: -2rem;
-      width: 23rem;
-      animation: fietsAnimatie 5s forwards linear;
-      transform: translateX(200%);
-    }
-  }
-
   .kunst-afbeelding {
     position: relative;
     grid-area: 1 / 2 / 2 / 3;
-    background-image: url("../images/castricum-aan-zee.jpg");
+    background-color: gainsboro;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background-size: cover;
+
     overflow: hidden;
 
     &.castricum {
+      background-image: url("../images/castricum.jpg");
+      
+
+      & .effect {
+        background-image: url("../images/vliegtuig.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        position: absolute;
+        bottom: 32rem;
+        height: 35px;
+        width: 81px;
+        animation: vliegen 30s forwards linear;
+        transform: translateX(530%);
+      }
+    }
+
+    &.de-woude {
+      background-image: url("../images/de-woude.jpg");
+      
+
       & .effect {
         background-image: url("../images/fiets.png");
         background-size: 100%;
@@ -168,12 +147,14 @@ html:has([value="darkmode"]:checked) {
         bottom: -2rem;
         height: 215px;
         width: 333px;
-        animation: fietsAnimatie 5s forwards linear;
+        animation: fietsen 5s forwards linear;
         transform: translateX(200%);
       }
     }
 
     &.castricum-aan-zee {
+      background-image: url("../images/castricum-aan-zee.jpg");
+
       & .effect {
         background-image: url("../images/strandbal.png");
         background-size: 100%;
@@ -187,22 +168,51 @@ html:has([value="darkmode"]:checked) {
   
       }
     }
+    &.limmen {
+      background-image: url("../images/limmen.jpg");
+
+      & .effect {
+        background-image: url("../images/tulpen.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        position: absolute;
+        bottom: -5rem;
+        height: 180px;
+        width: 751px;
+        animation: tulpen 1s forwards cubic-bezier(0.86, 0, 0.07, 1);
+        transform: translateY(60%);
+  
+      }
+    }
+
+    &.akersloot{
+      background-position: 50% 70%;
+      background-image: url("../images/akersloot.jpg");
+
+      img {
+        position: absolute;
+        width: 240px;
+        bottom: 60px;
+      }
+
+      & .effect {
+        background-image: url("../images/vis.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        position: absolute;
+        bottom: -3rem;
+        height: 100px;
+        width: 98px;
+        animation: vissen 5s infinite linear;
+        transform: translateX(-450%);
+      }
+    }
 
     img {
       position: absolute;
       width: 300px;
       bottom: 0;
     }
-
-    .region-detail {
-      position: absolute;
-      bottom: -2rem;
-      width: 7rem;
-      animation: strandBal 5s forwards ease-in-out;
-      transform: translateX(-400%) rotate(0deg);
-    }
-
-
 
     a {
       position: absolute;
@@ -217,10 +227,21 @@ html:has([value="darkmode"]:checked) {
       text-decoration: none;
       padding: 1rem 2rem;
       border-radius: 100px;
+      transition: .5s;
+
+      &:hover{
+        background-color: darkred;
+        
+      }
+
+      &:focus{
+        background-color: darkred;
+
+      }
     }
+
   }
 }
-
 
 @media (max-width: 900px) {
   .detail-parent {
@@ -260,14 +281,22 @@ html:has([value="darkmode"]:checked) {
   }
 }
 
-
-@keyframes fietsAnimatie {
+@keyframes fietsen {
   from {
     transform: translateX(200%);
   }
 
   to {
     transform: translateX(-200%);
+  }
+}
+@keyframes vissen {
+  from {
+    transform: translateX(-450%);
+  }
+
+  to {
+    transform: translateX(400%);
   }
 }
 
@@ -278,5 +307,23 @@ html:has([value="darkmode"]:checked) {
 
   to {
     transform: translateX(0%) rotate(-360deg);
+  }
+}
+
+@keyframes tulpen {
+  from {
+    transform: translateY(60%);
+  } to {
+    transform: translateY(0%);
+
+  }
+}
+
+@keyframes vliegen {
+  from {
+    transform: translateX(530%);
+  } to {
+    transform: translateX(-530%);
+
   }
 }
