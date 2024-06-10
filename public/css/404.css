@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.cdnfonts.com/css/new-york-extra-large");
+
+
+
+.main-404 {
+  width: 100vw;
+  height: 100lvh;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: rgb(255, 255, 255);
+  background-repeat: no-repeat;
+
+  a { 
+    /* text-decoration: none; */
+    font-weight: 700;
+    transition: .5s;
+
+    &:hover {
+      color: darkred;
+    }
+  }
+}
+
+svg {
+  width: 40%;
+  opacity: 0;
+  animation: fadeInZoomIn .5s .5s forwards;
+  margin-bottom: 2rem;
+}
+
+.cls-1 {
+  fill: none;
+  stroke: #e30613;
+  stroke-miterlimit: 10;
+  stroke-width: .2px;
+}
+
+span {
+  color: var(--kunst-in-c-rood);
+}
+
+.cls-2 {
+  fill: #1d1d1b;
+}
+
+.cls-2:first-of-type {
+  /* rotate: 20deg; */
+}
+
+.cls-2,
+.cls-3 {
+  stroke-width: 0px;
+}
+
+.cls-3 {
+  fill: #e30613;
+}
+
+.letter-c {
+  fill: #e30613;
+}
+
+h3 {
+  font-family: var(--kunstwerk-titel);
+}
+
+h4 {
+  text-align: center;
+  font-family: var(--font-family)
+}
+
+h3, h4 {
+  animation: fadeUp 1s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(.5);
+
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+@keyframes fadeUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+
+  } to {
+    transform: translateY(0);
+    opacity: 1; 
+  }
+}
