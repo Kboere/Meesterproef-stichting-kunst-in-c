@@ -107,8 +107,7 @@ html:has([value="darkmode"]:checked) {
             z-index: 1;
 
             img {
-                max-width: 500px;
-                max-height: 500px;
+                width: 100%;
             }
         }
     }
@@ -144,6 +143,7 @@ html:has([value="darkmode"]:checked) {
 
         & .content {
             flex-direction: column;
+            overflow: hidden;
 
             & .col-left, & .col-right {
                 flex: 1 0 100%;
@@ -153,6 +153,8 @@ html:has([value="darkmode"]:checked) {
             & .col-right {
                 justify-content: center;
             }
+
+
         }
     }
 }
