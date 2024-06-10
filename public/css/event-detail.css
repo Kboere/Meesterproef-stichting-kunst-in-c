@@ -22,9 +22,10 @@ html:has([value="darkmode"]:checked) {
         width: 100%;
         display: flex;
         color: var(--kunst-in-c-zwart);
+        gap: 30px;
 
         .col-left {
-            flex: 1 0 50%;
+            flex: 1 0 calc(50% - 15px);
 
             & h1 {
                 line-height: 60px;
@@ -37,8 +38,8 @@ html:has([value="darkmode"]:checked) {
         }
 
         .col-right {
+            flex: 1 0 calc(50% - 15px);
             display: flex;
-            flex: 1 0 50%;
             gap: 10px;
 
             & p {
@@ -92,15 +93,16 @@ html:has([value="darkmode"]:checked) {
         gap: 40px;
 
         & .col-left {
-            flex: 1 0 calc(50% - 40px);
-            max-width: calc(50% - 40px);
-            width: calc(50% - 40px);
+            flex: 1 0 calc(50% - 20px);
+            max-width: calc(50% - 20px);
+            width: calc(50% - 20px);
         }
 
         & .col-right {
-            flex: 1 0 calc(50% - 40px);
-            max-width: calc(50% - 40px);
-            width: calc(50% - 40px);
+            display: flex;
+            flex: 1 0 calc(50% - 20px);
+            max-width: calc(50% - 20px);
+            width: calc(50% - 20px);
             z-index: 1;
 
             img {
@@ -127,8 +129,15 @@ html:has([value="darkmode"]:checked) {
             flex-direction: column;
             color: var(--kunst-in-c-zwart);
 
-            h1 {
-                font-size: 2.5em;
+            & .col-left {
+                h1 {
+                    font-size: 2.5em;
+                }
+            }
+
+            & .col-right {
+                flex-direction: column;
+                align-items: center;
             }
         }
 
@@ -139,6 +148,9 @@ html:has([value="darkmode"]:checked) {
                 flex: 1 0 100%;
                 max-width: 100%;
                 width: 100%;
+            }
+            & .col-right {
+                justify-content: center;
             }
         }
     }
