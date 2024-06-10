@@ -22,6 +22,7 @@ html:has([value="darkmode"]:checked) {
         width: 100%;
         display: flex;
         color: var(--kunst-in-c-zwart);
+        flex-direction: column;
         gap: 30px;
 
         .col-left {
