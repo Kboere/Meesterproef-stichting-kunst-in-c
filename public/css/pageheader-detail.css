@@ -120,7 +120,7 @@ html:has([value="darkmode"]:checked) {
 
     &.castricum {
       background-image: url("../images/castricum.jpg");
-      
+
 
       & .effect {
         background-image: url("../images/vliegtuig.png");
@@ -137,7 +137,7 @@ html:has([value="darkmode"]:checked) {
 
     &.de-woude {
       background-image: url("../images/de-woude.jpg");
-      
+
 
       & .effect {
         background-image: url("../images/fiets.png");
@@ -165,9 +165,10 @@ html:has([value="darkmode"]:checked) {
         width: 98px;
         animation: strandBal 5s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
         transform: translateX(400%);
-  
+
       }
     }
+
     &.limmen {
       background-image: url("../images/limmen.jpg");
 
@@ -181,11 +182,11 @@ html:has([value="darkmode"]:checked) {
         width: 751px;
         animation: tulpen 1s forwards cubic-bezier(0.86, 0, 0.07, 1);
         transform: translateY(60%);
-  
+
       }
     }
 
-    &.akersloot{
+    &.akersloot {
       background-position: 50% 70%;
       background-image: url("../images/akersloot.jpg");
 
@@ -229,17 +230,16 @@ html:has([value="darkmode"]:checked) {
       border-radius: 100px;
       transition: .5s;
 
-      &:hover{
+      &:hover {
         background-color: darkred;
-        
+
       }
 
-      &:focus{
+      &:focus {
         background-color: darkred;
 
       }
     }
-
   }
 }
 
@@ -290,6 +290,7 @@ html:has([value="darkmode"]:checked) {
     transform: translateX(-200%);
   }
 }
+
 @keyframes vissen {
   from {
     transform: translateX(-450%);
@@ -313,7 +314,9 @@ html:has([value="darkmode"]:checked) {
 @keyframes tulpen {
   from {
     transform: translateY(60%);
-  } to {
+  }
+
+  to {
     transform: translateY(0%);
 
   }
@@ -322,7 +325,9 @@ html:has([value="darkmode"]:checked) {
 @keyframes vliegen {
   from {
     transform: translateX(530%);
-  } to {
+  }
+
+  to {
     transform: translateX(-530%);
 
   }
