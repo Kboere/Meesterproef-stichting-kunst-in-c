@@ -18,28 +18,72 @@ html:has([value="darkmode"]:checked) {
     position: relative;
     padding-top: 200px;
 
-    &:after {
-        content: "\f073";
-        font-family: 'Font Awesome 6 Free', Arial, sans-serif;
-        font-size: 23em;
-        position: absolute;
-        top: 200px;
-        right: 150px;
-        transform: rotate(10deg);
-        opacity: 0.05;
-
-    }
-
     & .section-intro {
         width: 100%;
         display: flex;
-        justify-content: flex-end;
-        flex-direction: column;
         color: var(--kunst-in-c-zwart);
 
-        & span {
-            color: var(--kunst-in-c-rood);
+        .col-left {
+            flex: 1 0 50%;
+
+            & h1 {
+                line-height: 60px;
+                max-width: 500px;
+
+                &::first-letter{
+                    color: var(--kunst-in-c-rood);
+                }
+            }
         }
+
+        .col-right {
+            display: flex;
+            flex: 1 0 50%;
+            gap: 10px;
+
+            & p {
+                background-color: var(--kunst-in-c-rood);
+                padding: 5px 10px;
+                color: var(--kunst-in-c-wit);
+                width: fit-content;
+                height: fit-content;
+                border-radius: 5px;
+                position: relative;
+
+                &:first-of-type {
+                    &::before {
+                        content: "\f073";
+                        font-family: 'Font Awesome 6 Free', Arial, sans-serif;
+                        position: relative;
+                        right: 0;
+                        margin: 0 10px 0 0;
+                    }
+                }
+                
+                &:nth-of-type(2) {
+                    &::before {
+                        content: "\f017";
+                        font-family: 'Font Awesome 6 Free', Arial, sans-serif;
+                        position: relative;
+                        right: 0;
+                        margin: 0 10px 0 0;
+                    }
+                }
+             
+                &:last-of-type {
+                    &::before {
+                        content: "\f3c5";
+                        font-weight: 600;
+                        font-family: 'Font Awesome 6 Free', Arial, sans-serif;
+                        position: relative;
+                        right: 0;
+                        margin: 0 10px 0 0;
+                    }
+                }
+            }
+        }
+
+
     }
 
     & .content {
@@ -58,6 +102,11 @@ html:has([value="darkmode"]:checked) {
             max-width: calc(50% - 40px);
             width: calc(50% - 40px);
             z-index: 1;
+
+            img {
+                max-width: 500px;
+                max-height: 500px;
+            }
         }
     }
 }
