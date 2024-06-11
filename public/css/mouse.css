@@ -13,3 +13,9 @@
     border-color: #ffffff;
   }
 }
+
+@media (max-width: 900px) {
+  #circularcursor {
+    display: none;
+  }
+}
