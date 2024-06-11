@@ -1,0 +1,29 @@
+.section-duo-columns {
+    display: flex;
+    gap: 60px;
+
+    .col-left {
+        flex: 1 0 calc(50% - 30px);
+        max-width: calc(50% - 30px);
+        width: calc(50% - 30px);
+    }
+
+    .col-right {
+        flex: 1 0 calc(50% - 30px);
+        max-width: calc(50% - 30px);
+        width: calc(50% - 30px);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .section-duo-columns {
+        flex-direction: column;
+
+        & .col-right, & .col-left {
+            flex: 1 0 100%;
+            flex-direction: column;
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+}
