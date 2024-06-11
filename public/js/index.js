@@ -113,3 +113,29 @@ document.addEventListener('DOMContentLoaded', function () {
 //     }
 //   });
 // });
+
+const dropdownContent = document.querySelector('.dropdown-content');
+const dropdownBtn = document.querySelector('.dropdown-btn');
+
+// Filter dropdown menu
+function toggleDropdown() {
+  dropdownContent.classList.toggle("show-filters");
+}
+
+dropdownBtn.addEventListener("click", () => {
+  toggleDropdown();
+});
+
+// Close filter when clicked outside the filter button
+window.onclick = function(e) {
+  if (!e.target.matches('.dropdown-btn')) {
+    const dropdownItems = document.getElementsByClassName("dropdown-content");
+    let i;
+    for (i = 0; i < dropdownItems.length; i++) {
+      const openDropdown = dropdownItems[i];
+      if (openDropdown.classList.contains('show-filters')) {
+        openDropdown.classList.remove('show-filters');
+      }
+    }
+  }
+}

@@ -19,17 +19,6 @@
         & p {
             color: rgb(212, 212, 212);
         }
-
-        & button {
-            display: flex;
-            font-family: var(--font-family);
-            font-weight: 400;
-            font-size: 1.2em;
-            align-items: center;
-            gap: .6em;
-            background-color: transparent;
-            border: none;
-        }
     }
 
     & li:first-of-type {
@@ -39,39 +28,9 @@
     }
 }
 
-
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #ffffff;
-    min-width: 160px;
-    width: 200px;
-    height: 300px;
-    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
-    z-index: 1;
-
-    & form {
-        display: flex;
-        flex-direction: column;
-    }
-}
-
-/* Show the dropdown menu when the filter button is clicked */
-.show {
-    display: block;
-}
-
-
-
-
-
 /*Sidescroll text gebied*/
 .section {
     & .section_pin {
-
         & #text-wrapper {
             display: flex;
             flex-direction: column;
