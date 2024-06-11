@@ -98,7 +98,7 @@
 @media only screen and (max-width: 375px) {
     .section-uitgelicht {
         & .content-wrapper {
-            height: 125dvh;
+            height: 140dvh;
         }
     }
 }
@@ -106,7 +106,93 @@
 @media only screen and (min-width: 376px) and (max-width: 425px) {
     .section-uitgelicht {
         & .content-wrapper {
-            height: 105dvh;
+            height: 118dvh;
+        }
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .section-uitgelicht {
+        & .content-wrapper {
+            & figure {
+                & img {
+                    filter: grayscale(0);
+                    width: calc(var(--s) * var(--f));
+                    height: calc(var(--s) * var(--f));
+                }
+
+                & .image-text {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    color: var(--kunst-in-c-wit);
+                
+                    & .button-holder {
+                        & .btn {
+                            background-color: var(--kunst-in-c-rood);
+                            padding: .7rem 1rem;
+                            border-radius: 2rem;
+                            border: 2px solid var(--kunst-in-c-rood);
+                            color: var(--white-font-color);
+                            font-size: 16px;
+                            transition: .2s;
+                
+                            &:hover,
+                            &:focus,
+                            &:focus-visible {
+                                cursor: pointer;
+                                background-color: var(--kunst-in-c-rood-hover);
+                                border-color: var(--kunst-in-c-rood-hover);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 426px) {
+    .section-uitgelicht {
+        & .content-wrapper {
+            & figure {
+                &:hover {
+                    cursor: pointer;
+
+                    & img {
+                        filter: grayscale(0);
+                        width: calc(var(--s) * var(--f));
+                        height: calc(var(--s) * var(--f));
+                    }
+
+                    & .image-text {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        color: var(--kunst-in-c-wit);
+                    
+                        & .button-holder {
+                            & .btn {
+                                background-color: var(--kunst-in-c-rood);
+                                padding: .7rem 1rem;
+                                border-radius: 2rem;
+                                border: 2px solid var(--kunst-in-c-rood);
+                                color: var(--white-font-color);
+                                font-size: 16px;
+                                transition: .2s;
+                    
+                                &:hover,
+                                &:focus,
+                                &:focus-visible {
+                                    cursor: pointer;
+                                    background-color: var(--kunst-in-c-rood-hover);
+                                    border-color: var(--kunst-in-c-rood-hover);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
