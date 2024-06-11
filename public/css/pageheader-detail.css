@@ -115,103 +115,80 @@ html:has([value="darkmode"]:checked) {
     align-items: center;
     flex-direction: column;
     background-size: cover;
+    background-position: 50% 50%;
+    background-image: url('../images/IMG_1350-min.jpg');
 
     overflow: hidden;
 
-    &.castricum {
-      background-image: url("../images/castricum.jpg");
-
-
+    &.bakkum {
       & .effect {
-        background-image: url("../images/vliegtuig.png");
+        background-image: url("../images/optie_Bakkum-icoon.png");
         background-size: 100%;
         background-repeat: no-repeat;
         position: absolute;
-        bottom: 32rem;
-        height: 35px;
-        width: 81px;
-        animation: vliegen 30s forwards linear;
-        transform: translateX(530%);
+        left: 6px;
+        bottom: 22px;
+        height: 321px;
+        width: 338px;
       }
+
     }
 
     &.de-woude {
-      background-image: url("../images/de-woude.jpg");
-
-
       & .effect {
-        background-image: url("../images/fiets.png");
+        background-image: url("../images/optie_de-woude.png");
         background-size: 100%;
         background-repeat: no-repeat;
         position: absolute;
-        bottom: -2rem;
-        height: 215px;
-        width: 333px;
-        animation: fietsen 5s forwards linear;
-        transform: translateX(200%);
+        left: 6px;
+        bottom: 22px;
+        height: 321px;
+        width: 338px;
       }
     }
 
-    &.castricum-aan-zee {
-      background-image: url("../images/castricum-aan-zee.jpg");
-
+    &.castricum {
       & .effect {
-        background-image: url("../images/strandbal.png");
+        background-image: url("../images/optie_Castricum-icoon.png");
         background-size: 100%;
         background-repeat: no-repeat;
         position: absolute;
-        bottom: -2rem;
-        height: 100px;
-        width: 98px;
-        animation: strandBal 5s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        transform: translateX(400%);
-
+        left: 6px;
+        bottom: 22px;
+        height: 321px;
+        width: 338px;
       }
     }
 
     &.limmen {
-      background-image: url("../images/limmen.jpg");
-
       & .effect {
-        background-image: url("../images/tulpen.png");
+        background-image: url("../images/optie_Limmen-icoon.png");
         background-size: 100%;
         background-repeat: no-repeat;
         position: absolute;
-        bottom: -5rem;
-        height: 180px;
-        width: 751px;
-        animation: tulpen 1s forwards cubic-bezier(0.86, 0, 0.07, 1);
-        transform: translateY(60%);
-
+        left: 6px;
+        bottom: 22px;
+        height: 321px;
+        width: 338px;
       }
     }
 
     &.akersloot {
-      background-position: 50% 70%;
-      background-image: url("../images/akersloot.jpg");
-
-      img {
-        position: absolute;
-        width: 240px;
-        bottom: 60px;
-      }
-
       & .effect {
-        background-image: url("../images/vis.png");
+        background-image: url("../images/optie_Akersloot-icoon.png");
         background-size: 100%;
         background-repeat: no-repeat;
         position: absolute;
-        bottom: -3rem;
-        height: 100px;
-        width: 98px;
-        animation: vissen 5s infinite linear;
-        transform: translateX(-450%);
+        left: 6px;
+        bottom: 22px;
+        height: 321px;
+        width: 338px;
       }
     }
 
     img {
       position: absolute;
-      width: 300px;
+      width: 100vw;
       bottom: 0;
     }
 
