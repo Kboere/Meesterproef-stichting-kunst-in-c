@@ -6,6 +6,8 @@ const hamburger = document.querySelector(".hamburger");
 const logo = document.querySelector(".logo svg");
 const darkmodeLamp = document.getElementById("lamp-svgrepo-com");
 const darkmodeLampLine = document.querySelector("#Group_6 #Path_79");
+const dropdownContent = document.querySelector(".dropdown-content");
+const dropdownBtn = document.querySelector(".dropdown-btn");
 
 window.addEventListener("scroll", () => {
   if (window.scrollY > 1) {
@@ -39,6 +41,30 @@ hamburger.addEventListener("click", () => {
   toggleMenu();
 });
 
+// Filter dropdown menu
+function toggleDropdown() {
+  dropdownContent.classList.toggle("show-filters");
+}
+
+dropdownBtn.addEventListener("click", () => {
+  toggleDropdown();
+});
+
+// Close filter when clicked out side the filter button
+window.onclick = function(e) {
+  if (!e.target.matches('.dropdown-btn')) {
+    const dropdownItems = document.getElementsByClassName("dropdown-content");
+    let i;
+    for (i = 0; i < dropdownItems.length; i++) {
+      const openDropdown = dropdownItems[i];
+      if (openDropdown.classList.contains('show-filters')) {
+        openDropdown.classList.remove('show-filters');
+      }
+    }
+  }
+}
+
+// GSAP scroll
 function initializeGSAPScroll() {
   gsap.registerPlugin(ScrollTrigger);
 
