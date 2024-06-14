@@ -22,6 +22,96 @@ html:has([value="darkmode"]:checked) {
   }
 }
 
+
+
+
+
+.de-woude .effect::after {
+  content: "Bevindt zich in De Woude";
+  position: absolute;
+  left: 0px;
+  top: 47px;
+  transform: translateY(-50%);
+  width: max-content;
+  opacity: 0;
+  width: 120px;
+  transition: .3s;
+  color: var(--kunst-in-c-wit);
+  font-family: var(--kunstwerk-titel);
+  font-weight: 800;
+  font-style: italic;
+  animation: deWoudeAnimatie 1.5s 2s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.akersloot .effect::after {
+  content: "Bevindt zich in Akersloot";
+  position: absolute;
+  left: 0px;
+  top: 47px;
+  transform: translateY(-50%);
+  width: max-content;
+  opacity: 0;
+  width: 120px;
+  transition: .3s;
+  color: var(--kunst-in-c-wit);
+  font-family: var(--kunstwerk-titel);
+  font-weight: 800;
+  font-style: italic;
+  animation: akerslootAnimatie 1.5s 2s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.castricum .effect::after {
+  content: "Bevindt zich in Castricum";
+  position: absolute;
+  left: 0px;
+  top: 47px;
+  transform: translateY(-50%);
+  width: max-content;
+  opacity: 0;
+  width: 120px;
+  transition: .3s;
+  color: var(--kunst-in-c-wit);
+  font-family: var(--kunstwerk-titel);
+  font-weight: 800;
+  font-style: italic;
+  animation: castricumAnimatie 1.5s 2s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.bakkum .effect::after {
+  content: "Bevindt zich in Bakkum";
+  position: absolute;
+  left: 0px;
+  top: 47px;
+  transform: translateY(-50%);
+  width: max-content;
+  opacity: 0;
+  width: 120px;
+  transition: .3s;
+  color: var(--kunst-in-c-wit);
+  font-family: var(--kunstwerk-titel);
+  font-weight: 800;
+  font-style: italic;
+  animation: bakkumAnimatie 1.5s 2s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.limmen .effect::after {
+  content: "Bevindt zich in Limmen";
+  position: absolute;
+  left: 0px;
+  top: 47px;
+  transform: translateY(-50%);
+  width: max-content;
+  opacity: 0;
+  width: 120px;
+  transition: .3s;
+  color: var(--kunst-in-c-wit);
+  font-family: var(--kunstwerk-titel);
+  font-weight: 800;
+  font-style: italic;
+  animation: limmenAnimatie 1.5s 2s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+
 .detail-parent {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -122,28 +212,29 @@ html:has([value="darkmode"]:checked) {
 
     &.bakkum {
       & .effect {
-        background-image: url("../images/optie_Bakkum-icoon.png");
+        background-image: url(../images/optie_Bakkum-icoon.png);
         background-size: 100%;
         background-repeat: no-repeat;
         position: absolute;
-        left: 6px;
+        left: 26px;
         bottom: 22px;
-        height: 321px;
-        width: 338px;
+        height: 52px;
+        width: 75px;
+        z-index: 99;
+        cursor: pointer;
       }
-
     }
 
     &.de-woude {
       & .effect {
-        background-image: url("../images/optie_de-woude.png");
+        background-image: url("../images/optie_de_woude.png");
         background-size: 100%;
         background-repeat: no-repeat;
         position: absolute;
-        left: 6px;
+        left: 26px;
         bottom: 22px;
-        height: 321px;
-        width: 338px;
+        height: 79px;
+        width: 80px;
       }
     }
 
@@ -153,10 +244,10 @@ html:has([value="darkmode"]:checked) {
         background-size: 100%;
         background-repeat: no-repeat;
         position: absolute;
-        left: 6px;
-        bottom: 22px;
-        height: 321px;
-        width: 338px;
+        left: 24px;
+        bottom: 23px;
+        height: 34px;
+        width: 97px;
       }
     }
 
@@ -166,10 +257,10 @@ html:has([value="darkmode"]:checked) {
         background-size: 100%;
         background-repeat: no-repeat;
         position: absolute;
-        left: 6px;
-        bottom: 22px;
-        height: 321px;
-        width: 338px;
+        left: 29px;
+        bottom: 20px;
+        height: 80px;
+        width: 29px;
       }
     }
 
@@ -179,10 +270,15 @@ html:has([value="darkmode"]:checked) {
         background-size: 100%;
         background-repeat: no-repeat;
         position: absolute;
-        left: 6px;
+        left: 28px;
         bottom: 22px;
-        height: 321px;
-        width: 338px;
+        height: 40px;
+        width: 93px;
+        transition: .5s;
+
+        &:hover {
+          scale: 1;
+        }
       }
     }
 
@@ -258,54 +354,83 @@ html:has([value="darkmode"]:checked) {
   }
 }
 
-@keyframes fietsen {
+@keyframes bakkumAnimatie {
   from {
-    transform: translateX(200%);
-  }
-
-  to {
-    transform: translateX(-200%);
+    left: 0px;
+    top: 45px;
+    width: max-content;
+    opacity: 0;
+    width: 120px;
+  } to {
+    left: 90px;
+    opacity: 1;
+    top: 46px;
+    width: 120px;
+    text-shadow: red 1px 1px 1px;
   }
 }
 
-@keyframes vissen {
+@keyframes limmenAnimatie {
   from {
-    transform: translateX(-450%);
-  }
-
-  to {
-    transform: translateX(400%);
+    left: 0px;
+    top: 47px;
+    width: max-content;
+    opacity: 0;
+    width: 120px;
+  } to {
+    left: 44px;
+    opacity: 1;
+    top: 47px;
+    width: 120px;
+    text-shadow: red 1px 1px 1px;
   }
 }
 
-@keyframes strandBal {
-  from {
-    transform: translateX(400%) rotate(0);
-  }
 
-  to {
-    transform: translateX(0%) rotate(-360deg);
+@keyframes akerslootAnimatie {
+  from {
+    left: 0px;
+    top: 18px;
+    width: max-content;
+    opacity: 0;
+    width: 120px;
+  } to {
+    left: 110px;
+    opacity: 1;
+    top: 18px;
+    width: 120px;
+    text-shadow: red 1px 1px 1px;
   }
 }
 
-@keyframes tulpen {
+@keyframes castricumAnimatie {
   from {
-    transform: translateY(60%);
-  }
-
-  to {
-    transform: translateY(0%);
-
+    left: 0px;
+    top: 14px;
+    width: max-content;
+    opacity: 0;
+    width: 120px;
+  } to {
+    left: 107px;
+    opacity: 1;
+    top: 14px;
+    width: 120px;
+    text-shadow: red 1px 1px 1px;
   }
 }
 
-@keyframes vliegen {
+@keyframes deWoudeAnimatie {
   from {
-    transform: translateX(530%);
-  }
-
-  to {
-    transform: translateX(-530%);
-
+    left: 0px;
+    top: 44px;
+    width: max-content;
+    opacity: 0;
+    width: 120px;
+  } to {
+    left: 95px;
+    opacity: 1;
+    top: 44px;
+    width: 120px;
+    text-shadow: red 1px 1px 1px;
   }
 }
