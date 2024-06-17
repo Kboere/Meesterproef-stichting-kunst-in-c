@@ -45,6 +45,65 @@ html:has([value="darkmode"]:checked) {
             }
         }
     }
+
+    /* ------------------------------------------------
+    ---------- De iconene binnen de castricum map    
+    -------------------------------------------------*/
+    .windsock {
+      fill: var(--kunst-in-c-wit);
+    }
+
+
+    .duinen {
+      fill: var(--kunst-in-c-wit);
+    }
+
+    .bos {
+      fill: var(--kunst-in-c-wit);
+    }
+
+    .de-woude-watersport {
+      fill: var(--kunst-in-c-wit);
+    }
+
+     /* ------------------------------------------------
+    ---------- Vlakken binnen castricum     
+    -------------------------------------------------*/
+
+    #castricum-map {
+    .bakkum-stuk.increase {
+      fill: #2969df;
+    }
+    .castricum-stuk.increase {
+      fill: #8213a4;
+    }
+    .limmen-stuk.increase {
+      fill: #2d9219;
+    }
+    .akersloot-stuk.increase {
+      fill: #b12031;
+    }
+    .de-woude-stuk.increase {
+      fill: #df5e6b
+      ;
+    }
+
+    .limmen-tulpen-1, .limmen-tulpen-2 {
+      fill: var(--kunst-in-c-wit);
+    }
+
+    .de-woude-watersport {
+      stroke: white;
+    }
+
+    .bakkum-tent {
+      stroke: white;
+    }
+  }
+
+      /* ------------------------------------------------
+    ---------- Einde Vlakken binnen castricum     
+    -------------------------------------------------*/
 }
 
 .section-pageheader {
@@ -76,7 +135,8 @@ html:has([value="darkmode"]:checked) {
             justify-content: space-between;
 
             & .col-left {
-                flex: 1 0 calc(58% - 100px);
+              position: relative;
+              flex: 1 0 calc(58% - 100px);
             }
 
             & .col-right {
