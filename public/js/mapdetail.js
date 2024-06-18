@@ -1,6 +1,8 @@
 const stukken = document.querySelectorAll(".stuk");
 const textHeader = document.getElementById('text-change');
+const textDesc = document.getElementById('text-desc');
 const defaultTekst = textHeader.dataset.default;
+
 
 stukken.forEach(stuk => {
   // Maak de stukken klikbaar
@@ -28,7 +30,7 @@ function toggleStuk(geklikteEl) {
   const geklikteElName = geklikteEl.dataset.naam;
 
   if (geklikteEl.classList.contains("increase")) {
-    textHeader.textContent = defaultTekst; 
+    textHeader.textContent = defaultTekst;
   } else {
     textHeader.textContent = geklikteElName; 
   }

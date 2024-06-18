@@ -96,13 +96,21 @@ html:has([value="darkmode"]:checked) {
       stroke: white;
     }
 
+    .akersloot-visje {
+      stroke: white;
+    }
+
+    .akersloot-bootje {
+      stroke: white;
+    }
+
     .bakkum-tent {
       stroke: white;
     }
   }
 
-      /* ------------------------------------------------
-    ---------- Einde Vlakken binnen castricum     
+    /* ------------------------------------------------
+    ---------- Einde Vlakken binnen castricum  
     -------------------------------------------------*/
 }
 

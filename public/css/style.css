@@ -160,6 +160,7 @@ main {
     &:focus {
       fill: var(--kunst-in-c-rood);
       cursor: grab;
+      outline: none;
     }
   }
 
@@ -258,7 +259,7 @@ main {
   stroke-width: 30px;
   transition: opacity .3s;
   opacity: 0;
-  transform: scale(0.15) translate(7200px, 3000px);
+  transform: scale(0.1) translate(12200px, 7000px);
 }
 
 .windsock {

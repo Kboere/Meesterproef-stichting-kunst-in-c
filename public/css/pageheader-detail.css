@@ -217,9 +217,9 @@ html:has([value="darkmode"]:checked) {
         background-repeat: no-repeat;
         position: absolute;
         left: 26px;
-        bottom: 22px;
-        height: 52px;
-        width: 75px;
+        bottom: 10px;
+        height: 77px;
+        width: 57px;
         z-index: 99;
         cursor: pointer;
       }
@@ -357,14 +357,14 @@ html:has([value="darkmode"]:checked) {
 @keyframes bakkumAnimatie {
   from {
     left: 0px;
-    top: 45px;
+    top: 37px;
     width: max-content;
     opacity: 0;
     width: 120px;
   } to {
-    left: 90px;
+    left: 64px;
     opacity: 1;
-    top: 46px;
+    top: 37px;
     width: 120px;
     text-shadow: red 1px 1px 1px;
   }
